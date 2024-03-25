@@ -1,8 +1,20 @@
-# React + Vite
+# Electrum
+ “Spark innovation, Connect circuits, and Let Creativity illuminate”
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ ## Description 
+ This project is a community-driven platform designed to unite electronics enthusiasts worldwide. Serving as a centralized hub, it provides a space for learning, collaboration, and project showcase. Users can explore a rich repository of DIY projects, access educational resources, and participate in challenges. The platform fosters a supportive community, facilitates open-source collaboration, and offers a marketplace for components.
 
-Currently, two official plugins are available:
+## Vision of our project:
+To empower enthusiasts, hobbyists, and DIY electronics enthusiasts by providing an inclusive online platform that serves as a hub for learning, collaborating, and showcasing innovative electronic projects. Our DIY electronic website system aims to foster a vibrant community where individuals can explore, create, and share their electronic endeavors while accessing valuable resources, tutorials, and a marketplace for components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Motivation
+* COMMUNITY BUILDING
+* LEARNING OPPORTUNITIES
+* CONTEST PERFORMING
+* RESOURCES ACCESSIBILITY
+* MARKETPLACE AND ACCESSIBILITY
+* INNOVATION AND CREATIVITY
+* GAMIFICATION AND RECOGNITION
+
+## Work Flow 
+https://docs.google.com/document/d/1DhCCWL9_KvWSmqjiDg3ScnNsdxgaJ8iovthxRsK2d-A/edit?usp=sharing 
