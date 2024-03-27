@@ -5,7 +5,6 @@ function App() {
   return (
     <>
       Welcome to Electrum Client.
-      
     </>
   )
 }
