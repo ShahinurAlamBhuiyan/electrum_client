@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       Welcome to Electrum Client.
-      sabbir setup
+      updated by sabbir
     </>
   )
 }
