@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       Welcome to Electrum Client.
-      fahad branch created.
+      shahin branch updated.
     </>
   )
 }
