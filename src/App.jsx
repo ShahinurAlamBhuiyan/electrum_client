@@ -1,11 +1,10 @@
-import './App.css'
 
-function App() {
+import MainNavbar from './components/shared/MainNavbar/MainNavbar'
 
+function App () {
   return (
     <>
-      Welcome to Electrum Client.
-      shahin branch updated.
+      <MainNavbar />
     </>
   )
 }
