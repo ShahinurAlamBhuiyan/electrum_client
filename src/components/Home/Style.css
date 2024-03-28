@@ -1,0 +1,20 @@
+.home-banner {
+  height: 50vh;
+  background-image: url("../../assets/home-banner.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.homeBanner-quotes {
+  background-color: transparent;
+  padding-bottom: 4%;
+
+  font-size: x-large;
+  font-weight: bold;
+  text-shadow: -1px 5px 3px rgba(0, 0, 0, 0.6);
+}
