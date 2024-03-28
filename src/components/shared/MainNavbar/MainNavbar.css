@@ -1,0 +1,30 @@
+.navbar {
+  background: rgb(21, 24, 21);
+  background: linear-gradient(
+    180deg,
+    rgba(21, 24, 21, 1) 7%,
+    rgba(52, 75, 59, 1) 100%
+  );
+}
+.navbar-container {
+  background-color: transparent;
+}
+
+#brand {
+  color: #ffffffab !important;
+}
+#collapsible-nav-dropdown {
+  color: #ffffffab !important;
+}
+
+.nav-menu {
+  color: #ffffffab !important;
+}
+
+.navbar-toggler {
+  color: rgb(255, 255, 255) !important;
+  border: 1px solid #ffffffab !important;
+}
+.navbar-toggler-icon {
+  background-color: transparent !important;
+}
