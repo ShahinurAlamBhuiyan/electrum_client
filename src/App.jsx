@@ -1,10 +1,10 @@
-
-import MainNavbar from './components/shared/MainNavbar/MainNavbar'
+// import MainNavbar from './components/shared/MainNavbar/MainNavbar'
+import Home from './pages/Home/Home'
 
 function App () {
   return (
     <>
-      <MainNavbar />
+      <Home />
     </>
   )
 }
