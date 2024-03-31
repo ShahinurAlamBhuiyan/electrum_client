@@ -8,6 +8,7 @@ const Home = () => {
             <HomeBanner />
             <Features />
             <Reviews />
+            
         </div>
     )
 }

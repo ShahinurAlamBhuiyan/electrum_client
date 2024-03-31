@@ -1,4 +1,4 @@
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Container, Nav, Button } from 'react-bootstrap'
 import './MainNavbar.css'
 const MainNavbar = () => {
   return (
@@ -15,39 +15,49 @@ const MainNavbar = () => {
           className='navbar-container'
           id='responsive-navbar-nav'
         >
-          <Nav className='navbar-container'>
-            <Nav.Link href='/posts' className='nav-menu'>
-              Posts
+          <Nav
+            className='navbar-container me-auto'
+            style={{ marginLeft: '100px' }}
+          >
+            <Nav.Link href='/' className='nav-menu'>
+              Home
+            </Nav.Link>
+            <Nav.Link href='/feed' className='nav-menu'>
+              Feed
+            </Nav.Link>
+            <Nav.Link href='/components' className='nav-menu'>
+              Components
             </Nav.Link>
             <Nav.Link href='/docs' className='nav-menu'>
               Docs
             </Nav.Link>
-            <NavDropdown
+            <Nav.Link href='/courses' className='nav-menu'>
+              Courses
+            </Nav.Link>
+            <Nav.Link href='/qna' className='nav-menu'>
+              QnA
+            </Nav.Link>
+            <Nav.Link href='/job-hunting' className='nav-menu'>
+              Hunting
+            </Nav.Link>
+
+            {/* <NavDropdown
               className='navbar-container'
-              title='Dropdown'
+              title='Components'
               id='collapsible-nav-dropdown'
+              href='/docs'
             >
               <NavDropdown.Item className='nav-item' href='#action/3.1'>
-                Action
+                new components
               </NavDropdown.Item>
               <NavDropdown.Item className='nav-item' href='#action/3.2'>
-                Another action
+                pre-owned components
               </NavDropdown.Item>
-              <NavDropdown.Item className='nav-item' href='#action/3.3'>
-                Something
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item className='nav-item' href='#action/3.4'>
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
           <Nav className='navbar-container'>
-            <Nav.Link className='nav-menu' href='#deets'>
-              More deets
-            </Nav.Link>
-            <Nav.Link className='nav-menu' eventKey={2} href='#memes'>
-              Dank memes
+            <Nav.Link href='/sign-in' className='nav-menu'>
+              <Button>Sign In</Button>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
