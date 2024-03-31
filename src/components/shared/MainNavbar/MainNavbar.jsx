@@ -19,8 +19,8 @@ const MainNavbar = () => {
             <Nav.Link href='/posts' className='nav-menu'>
               Posts
             </Nav.Link>
-            <Nav.Link href='#pricing' className='nav-menu'>
-              Pricing
+            <Nav.Link href='/docs' className='nav-menu'>
+              Docs
             </Nav.Link>
             <NavDropdown
               className='navbar-container'
