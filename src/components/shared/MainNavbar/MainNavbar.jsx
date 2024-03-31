@@ -22,6 +22,9 @@ const MainNavbar = () => {
             <Nav.Link href='/docs' className='nav-menu'>
               Docs
             </Nav.Link>
+            <Nav.Link href='/qna' className='nav-menu'>
+              QnA
+            </Nav.Link>
             <NavDropdown
               className='navbar-container'
               title='Dropdown'

@@ -3,6 +3,7 @@ import Main from '../Layout/Main'
 import Home from '../pages/Home/Home'
 import Posts from '../pages/Posts/Posts'
 import Docs from '../pages/Docs/Docs'
+import QnA from '../pages/QnA/QnA'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '/docs',
         element: <Docs />
+      },
+      {
+        path: '/qna',
+        element: <QnA />
       }
     ]
   }
