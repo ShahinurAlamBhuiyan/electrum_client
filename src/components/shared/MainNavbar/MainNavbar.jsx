@@ -22,10 +22,10 @@ const MainNavbar = () => {
             <Nav.Link href='/' className='nav-menu'>
               Home
             </Nav.Link>
-            <Nav.Link href='/feed' className='nav-menu'>
+            <Nav.Link href='/feed' className='nav-menu disabled'>
               Feed
             </Nav.Link>
-            <Nav.Link href='/components' className='nav-menu'>
+            <Nav.Link href='/components' className='nav-menu disabled'>
               Components
             </Nav.Link>
             <Nav.Link href='/docs' className='nav-menu'>
@@ -34,7 +34,7 @@ const MainNavbar = () => {
             <Nav.Link href='/courses' className='nav-menu'>
               Courses
             </Nav.Link>
-            <Nav.Link href='/qna' className='nav-menu'>
+            <Nav.Link href='/qna' className='nav-menu disabled'>
               QnA
             </Nav.Link>
             <Nav.Link href='/job-hunting' className='nav-menu'>
