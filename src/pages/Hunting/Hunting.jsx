@@ -61,9 +61,9 @@ const Hunting = () => {
         <div className='cards'>
         {
           huntingData?.map((job, index) => (
-            <div>
+            // <div>
               <HuntingCard key={index} job={job} />
-            </div>
+            // </div>
           ))
         }
         </div>

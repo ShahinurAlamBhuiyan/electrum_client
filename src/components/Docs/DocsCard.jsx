@@ -90,9 +90,11 @@ const DocsCard = () => {
         </Card>
       ))}
     </div>
-   <div  style={{marginLeft:'50%', paddingTop: '30px', paddingBottom:'30px'}}>
-   <Button>See More</Button>
-   </div>
+   
+{/* <div> */}
+<Button className='docs_btn'>See More</Button>
+
+  {/* </div>    */}
   </div>
   )
 }
