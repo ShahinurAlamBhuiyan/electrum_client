@@ -19,75 +19,26 @@
     text-shadow: -1px 5px 3px rgba(0, 0, 0, 0.6);
   }
   
-  /* ----------------------------------- */
-  /* #main-slider-container {
-    margin-bottom: 30px;
-    height: 100%;
-  }
-  .CardSlider_container {
-    width: 100vw;
+  /*.......Course Section........*/
+  
+  .course{
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
+    margin-right: 5%;
+    margin-left: 5%;
   }
-  .CardSlider_container h2 {
-    padding: 15px;
-    padding-top: 40px;
-    font-size: x-large;
+
+  .course button{
+    margin-top: 6.5%;
   }
-  
-  .slider-card {
-    width: 250px;
-    height: 250px;
-  
-    background: rgb(25, 88, 78);
-    background: linear-gradient(
-      34deg,
-      rgba(25, 88, 78, 1) 0%,
-      rgba(0, 18, 15, 1) 100%
-    );
-  
-    margin-left: 10px;
-    margin-right: 10px;
-  
-    /* display: flex; 
-  } 
-  
-  .slider-card-image {
-    width: 150px;
-    height: 150px;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
+  .course-container h2{
+    padding-top: 6%;
+    text-decoration: underline;
   }
-  .slider-card-title {
-    background-color: transparent;
-    /* text-align: center; 
+
+  .card img{
+    height: 40vh;
+    opacity: 0.6;
   }
-  
-  .slider-icon {
-    background-color: #0fa958 !important;
-  }
-  .slider-icon.right {
-    right: -50px;
-  }
-  
-  .slider-icon.left {
-    left: -40px;
-  }
-  
-  .slider-card-description {
-    /* width: 100%; 
-  }
-  
-  /* ----------------------------Reviews---------------------- 
-  .reviews {
-    padding-bottom: 40px;
-  }
-  .reviews h2 {
-    text-align: center;
-  }
-  */
