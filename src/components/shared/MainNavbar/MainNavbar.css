@@ -1,0 +1,33 @@
+.navbar {
+ background: rgb(21,24,21);
+background: linear-gradient(180deg, rgba(21,24,21,1) 0%, rgba(28,35,30,1) 35%, rgba(34,47,38,1) 100%);
+}
+.navbar-container {
+  background-color: transparent;
+}
+
+#brand {
+  color: #ffffffab !important;
+}
+#collapsible-nav-dropdown {
+  color: #ffffffab !important;
+}
+
+.nav-menu {
+  color: #ffffffab !important;
+}
+
+.navbar-toggler {
+  color: rgb(255, 255, 255) !important;
+  border: 1px solid #ffffffab !important;
+}
+.navbar-toggler-icon {
+  background-color: transparent !important;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .navbar-container{
+    margin-left: 0px !important;
+  }
+}
