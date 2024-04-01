@@ -86,6 +86,8 @@ const DocsCard = () => {
             variant='top'
             src={item.imageURL}
           />
+
+          
         </Card>
       ))}
     </div>
