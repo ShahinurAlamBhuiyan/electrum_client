@@ -1,5 +1,58 @@
+*{
+    background-image: url("https://i.ibb.co/G53FW47/ellips.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+/* search bar */
+.search_container{
+    border: 1px solid #D7D8D7;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 10%;
+    /* padding: 20px auto; */
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: 50px;
+    background: rgb(38,42,39);
+    background: linear-gradient(90deg, rgba(38,42,39,1) 0%, rgba(98,102,99,1) 22%, rgba(8,15,10,1) 100%);
+}
+.job_input{
+    /* border: 1px solid #D7D8D7; */
+    /* border: none; */
+    border-radius: 10px;
+    padding: 5px;
+    width: 90%;
+    background-color: transparent;
+    background: rgb(8,15,10);
+    background: linear-gradient(90deg, rgba(8,15,10,1) 0%, rgba(98,102,99,1) 77%, rgba(38,42,39,1) 100%);
+}
+.btn_job_search{
+    border: 1px solid #D7D8D7;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #475445;
+}
+.btn_see_more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #D7D8D7;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #475445;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+/* cards */
 .card-container{
-    padding-top: 50px;
+    /* padding-top: 50px;
+    padding-bottom: 50px; */
+    padding: 50px 15px;
 }
 .single_card{
     padding: 50px 30px;
@@ -19,6 +72,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
 }
 .extra_info{
     border: 1px solid rgb(255, 234, 208);
@@ -51,3 +105,4 @@
 .card_footer{
     justify-content: space-between;
 }
+
