@@ -68,6 +68,7 @@ const Hunting = () => {
         }
         </div>
       </div>
+      <button className='btn_see_more'>See More</button>
     </>
   )
 }
