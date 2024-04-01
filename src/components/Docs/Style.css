@@ -8,12 +8,15 @@
 
   display: flex;
   flex-direction: row !important;
-  border: 1px solid white;
+  /* border: 1px solid white; */
+  border: none !important;
+  background-color: transparent !important;
+  cursor: pointer;
 }
 
 .card img {
   width: 300px;
-  height: 200px;
+
   justify-content: center;
 }
 .card-container {
@@ -22,7 +25,6 @@
   justify-content: center;
   align-items: flex-start;
   margin-left: 50px;
-  /* flex-direction: column; */
 
   flex-wrap: wrap;
 
@@ -38,6 +40,7 @@
   flex-direction: column;
   width: 300px;
   height: 200px;
+  background-color: transparent;
 }
 
 .card-description {

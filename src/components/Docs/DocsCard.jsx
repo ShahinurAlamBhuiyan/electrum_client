@@ -55,17 +55,37 @@ const DocsCard = () => {
     <div className='card-container'>
       {data.map((item, index) => (
         <Card className='single-card' key={index}>
-          <div>
+          <div
+            style={{
+              background: '#484747',
+              border: 'none',
+              borderRadius: '8px'
+            }}
+          >
             <Card.Body className='card-body'>
-              <Card.Title>{item.title}</Card.Title>
-              <Card.Text className='card-description'>
+              <Card.Title style={{ background: 'transparent' }}>
+                {item.title}
+              </Card.Title>
+              <Card.Text
+                style={{ background: 'transparent' }}
+                className='card-description'
+              >
                 {item.description}
               </Card.Text>
-              <Card.Text className='card_date'>{item.published}</Card.Text>
+              <Card.Text
+                style={{ background: 'transparent' }}
+                className='card_date'
+              >
+                {item.published}
+              </Card.Text>
             </Card.Body>
           </div>
 
-          <Card.Img variant='top' src={item.imageURL} />
+          <Card.Img
+            style={{ background: 'transparent' }}
+            variant='top'
+            src={item.imageURL}
+          />
         </Card>
       ))}
     </div>
