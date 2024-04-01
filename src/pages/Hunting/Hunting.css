@@ -14,7 +14,7 @@
     background: linear-gradient(90deg, rgba(38,42,39,1) 0%, rgba(98,102,99,1) 22%, rgba(8,15,10,1) 100%);
 }
 .job_input{
-    border: 1px solid #D7D8D7;
+    /* border: 1px solid #D7D8D7; */
     /* border: none; */
     border-radius: 10px;
     padding: 5px;
