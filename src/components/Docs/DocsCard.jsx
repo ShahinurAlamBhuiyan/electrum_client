@@ -14,7 +14,7 @@ const data = [
     imageURL:
       'https://atlas-content-cdn.pixelsquid.com/stock-images/resistor-rvAElYD-600.jpg',
     description:
-      'A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element.',
+      'A resistor is a passive two-terminal electrical component that implements electrical....',
     published: 'Feb 25, 2024. 5 min read.Book'
   },
   {
