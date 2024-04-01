@@ -88,7 +88,7 @@
 .review {
   margin: auto;
   width: 60vw;
-  background-color: white !important;
+  background-color: rgba(55, 173, 130, 0.488) !important;
   padding: 1.5rem 2rem;
   border-radius: 8px;
   box-shadow: var(--light-shadow);
@@ -129,24 +129,23 @@
 .author {
   margin-bottom: 0.25rem;
   background-color: transparent;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 .job {
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   background-color: transparent;
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: 0.85rem;
 }
 .info {
   margin-bottom: 0.75rem;
   background-color: transparent;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .button-container {
   background-color: transparent;
-  /* color: black; */
 }
 .prev-btn,
 .next-btn {
