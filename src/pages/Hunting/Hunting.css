@@ -1,0 +1,53 @@
+.card-container{
+    padding-top: 50px;
+}
+.single_card{
+    padding: 50px 30px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(76,126,73,0.9626444327731093) 16%, rgba(18,31,18,1) 100%);
+    width: 100%;
+    border: 1px solid rgb(240, 226, 226);
+    border-radius: 20px;
+    width: 330px;
+    height: 450px;
+    /* justify-content: center;
+    align-items: center; */
+}
+.cards{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.extra_info{
+    border: 1px solid rgb(255, 234, 208);
+    border-radius: 35px;
+    padding: 5px 8px;
+    
+    /* margin: 0 10px; */
+    text-align: center;
+    margin-right: 10px;
+    font-size: 13px;
+}
+.btn_details{
+    border: 1px solid antiquewhite;
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: #435544;
+
+    cursor: pointer;
+}
+.transparent{
+    background-color: transparent;
+}
+.flex_item{
+    display: flex;
+    padding-top: 15px;
+}
+.job_title{
+    padding: 20px 0;
+}
+.card_footer{
+    justify-content: space-between;
+}
