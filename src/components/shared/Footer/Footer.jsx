@@ -163,37 +163,37 @@ export default function Footer () {
               <p style={{ backgroundColor: 'transparent' }}>
                 <a
                   style={{ backgroundColor: 'transparent' }}
-                  href='#!'
+                  href='/qna'
                   className='text-reset'
                 >
-                  Pricing
+                  QnA
                 </a>
               </p>
               <p style={{ backgroundColor: 'transparent' }}>
                 <a
                   style={{ backgroundColor: 'transparent' }}
-                  href='#!'
+                  href='/docs'
                   className='text-reset'
                 >
-                  Settings
+                  Documents
                 </a>
               </p>
               <p style={{ backgroundColor: 'transparent' }}>
                 <a
                   style={{ backgroundColor: 'transparent' }}
-                  href='#!'
+                  href='/job-hunting'
                   className='text-reset'
                 >
-                  Orders
+                  Job Hunting
                 </a>
               </p>
               <p style={{ backgroundColor: 'transparent' }}>
                 <a
                   style={{ backgroundColor: 'transparent' }}
-                  href='#!'
+                  href='/courses'
                   className='text-reset'
                 >
-                  Help
+                  Courses
                 </a>
               </p>
             </MDBCol>
