@@ -1,0 +1,68 @@
+.course-banner {
+    height: 60vh;
+    background-image: url("../../assets/CourseBanner.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  .course-quotes {
+    background-color: transparent;
+    padding-bottom: 12%;
+  
+    font-size: x-large;
+    font-weight: bold;
+    text-shadow: -1px 5px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  /*.......Course Section........*/
+
+  .course{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .course button{
+    margin-top: 6.5%;
+  }
+  .course-container h2{
+    padding-top: 6%;
+    text-decoration: underline;
+  }
+
+  .card img{
+    height: 40vh;
+    opacity: 0.6;
+  }
+
+  /*.........Videos Section.......*/
+  .video-container{
+    margin: auto;
+  }
+
+  
+  .videos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .video-container h2{
+    padding-top: 6%;
+    text-decoration: underline;
+  }
+
+  .videos button{
+    margin-top: 3.5%;
+  }
