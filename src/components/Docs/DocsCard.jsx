@@ -1,4 +1,4 @@
-import { Card } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 import './Style.css'
 const data = [
   {
@@ -52,8 +52,9 @@ const data = [
 
 const DocsCard = () => {
   return (
-    <div className='card-container'>
-      {data.map((item, index) => (
+    <div>
+        <div className='card-container'>
+        {data.map((item, index) => (
         <Card className='single-card' key={index}>
           <div
             style={{
@@ -86,11 +87,13 @@ const DocsCard = () => {
             variant='top'
             src={item.imageURL}
           />
-
-          
         </Card>
       ))}
     </div>
+   <div  style={{marginLeft:'50%', paddingTop: '30px', paddingBottom:'30px'}}>
+   <Button>See More</Button>
+   </div>
+  </div>
   )
 }
 
