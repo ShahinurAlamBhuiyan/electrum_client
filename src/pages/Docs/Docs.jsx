@@ -4,6 +4,7 @@ const Docs = () => {
   return (
     <div>
       <DocsCard />
+      
     </div>
   )
 }
