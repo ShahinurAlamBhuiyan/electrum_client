@@ -1,4 +1,5 @@
 import HuntingCard from './HuntingCard';
+import SearchBar from './SearchBar';
 const huntingData = [
   {
   "companyLogo" : "https://i.ibb.co/vqV9YDm/tesla-logo.png",
@@ -54,18 +55,20 @@ const huntingData = [
 const Hunting = () => {
 
   return (
-    <div className='card-container'>
-      <div className='cards'>
-      {
-        huntingData?.map((job, index) => (
-          <div>
-            <HuntingCard key={index} job={job} />
-          </div>
-        ))
-      }
+    <>
+      <SearchBar />
+      <div className='card-container'>
+        <div className='cards'>
+        {
+          huntingData?.map((job, index) => (
+            <div>
+              <HuntingCard key={index} job={job} />
+            </div>
+          ))
+        }
+        </div>
       </div>
-    </div>
-    
+    </>
   )
 }
 
