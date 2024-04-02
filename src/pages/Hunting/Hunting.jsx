@@ -55,7 +55,7 @@ const huntingData = [
 const Hunting = () => {
 
   return (
-    <>
+    <div className='hunting_container'>
       <SearchBar />
       <div className='card-container'>
         <div className='cards'>
@@ -69,7 +69,7 @@ const Hunting = () => {
         </div>
       </div>
       <button className='btn_see_more'>See More</button>
-    </>
+    </div>
   )
 }
 
