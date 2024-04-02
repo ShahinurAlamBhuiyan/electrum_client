@@ -26,7 +26,7 @@ export default function HuntingCard({job}) {
       <div className='card_footer transparent flex_item'>
         <p className='transparent'><span className='transparent' style={{color: '#81FF9D', fontSize: '30px'}}>{job.salary}</span>/month</p>
         {/* <p>Details</p> */}
-        <button onClick={()=>{}} className='btn_details'>Details</button>
+        {/* <button onClick={()=>{}} className='btn_details'>Details</button> */}
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-*{
+.hunting_container{
     background-image: url("https://i.ibb.co/G53FW47/ellips.png");
     background-repeat: no-repeat;
     background-position: bottom;
@@ -59,7 +59,7 @@
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(76,126,73,0.9626444327731093) 16%, rgba(18,31,18,1) 100%);
     width: 100%;
-    border: 1px solid rgb(240, 226, 226);
+    border: 1px solid gray;
     border-radius: 20px;
     width: 330px;
     height: 450px;
@@ -84,14 +84,14 @@
     margin-right: 10px;
     font-size: 13px;
 }
-.btn_details{
+/* .btn_details{
     border: 1px solid antiquewhite;
     border-radius: 8px;
     padding: 10px 20px;
     background-color: #435544;
 
     cursor: pointer;
-}
+} */
 .transparent{
     background-color: transparent;
 }
