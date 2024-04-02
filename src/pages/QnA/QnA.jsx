@@ -1,6 +1,8 @@
+import SearchBar from "./SearchBar"
+
 const QnA = () => {
   return (
-    <div>QnA</div>
+    <SearchBar />
   )
 }
 
