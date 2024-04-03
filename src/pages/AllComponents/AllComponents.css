@@ -1,0 +1,96 @@
+.comp_header{
+    margin: 50px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.btn_new_comp {
+    width: 20%;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #64B357;
+    transition: background-color 0.2s ease; /* Add transition for smooth effect */
+  }
+  
+  .btn_new_comp:hover {
+    background-color: #5fd24d; /* Slightly darker green on hover */
+  }
+  
+  .btn_pre_comp {
+    width: 20%;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #202E25;
+    transition: background-color 0.2s ease; /* Add transition for smooth effect */
+  }
+  
+  .btn_pre_comp:hover {
+    background-color: #303f38; /* Slightly darker gray on hover */
+  }
+  
+.input_comp{
+    width: 55%;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 10px;
+}
+.input_comp:hover{
+    border: 1px solid seashell;
+}
+.search_icon{
+    border-radius: 8px;
+    /* border: 1px solid gray; */
+    /* padding: 5px; */
+    width: 3%;
+    /* margin: 10px; */
+}
+.search_icon:hover{
+    background-color: #ffffff31;
+}
+
+/* card style */
+.comp_card_container{
+  margin: 50px 5%;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px 15px;
+  display: flex;
+}
+.comp_single_card{
+  padding: 50px 30px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, #5d9659 0%, #254027 77%, #09120B 100%);
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 20px;
+  width: 330px;
+  height: 450px;
+}
+.product_img{
+  width: 50%;
+  background-color: transparent;
+}
+.product_img_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product_name{
+  background-color: transparent;
+}
+.product_desc{
+  background-color: transparent;
+}
+.cart_icon{
+  width: 20%;
+  background-color: transparent;
+}
+.card_footer{
+  background-color: transparent;
+  display: flex;
+}
+.product_price{
+  background-color: transparent;
+}
