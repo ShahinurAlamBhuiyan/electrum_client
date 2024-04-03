@@ -1,5 +1,5 @@
-import HuntingCard from './HuntingCard';
-import SearchBar from './SearchBar';
+import HuntingCard from '../../components/Hunting/HuntingCard';
+import SearchBar from '../../components/Hunting/SearchBar';
 const huntingData = [
   {
   "companyLogo" : "https://i.ibb.co/vqV9YDm/tesla-logo.png",

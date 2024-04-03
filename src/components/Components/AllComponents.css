@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: -50px;
 }
 .btn_new_comp {
     width: 20%;
@@ -53,11 +54,20 @@
 /* card style */
 .comp_card_container{
   margin: 50px 5%;
-  align-items: center;
+  display: flex;
+  /* align-items: center; */
   justify-content: space-around;
   padding: 50px 15px;
-  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: -15px;
 }
+/* .cards{
+  display: flex;
+} */
+
 .comp_single_card{
   padding: 50px 30px;
   background: rgb(2,0,36);
@@ -65,20 +75,33 @@
   width: 100%;
   border: 1px solid gray;
   border-radius: 20px;
-  width: 330px;
+  width: 360px;
   height: 450px;
+  
+}
+.comp_single_card:hover{
+  box-shadow: 1px 5px 15px rgba(255, 255, 255, 0.409);
 }
 .product_img{
-  width: 50%;
+  width: 70%;
   background-color: transparent;
 }
 .product_img_container{
+  height: 155px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+.name_desc_container{
+  background-color: transparent;
+  height: 40%;
 }
 .product_name{
   background-color: transparent;
+  /* margin-bottom: 20px; */
+  color: rgba(0, 255, 132, 0.836);
 }
 .product_desc{
   background-color: transparent;
@@ -86,6 +109,8 @@
 .cart_icon{
   width: 20%;
   background-color: transparent;
+  /* padding: 5px; */
+  border-radius: 8px;
 }
 .card_footer{
   background-color: transparent;
@@ -93,4 +118,6 @@
 }
 .product_price{
   background-color: transparent;
+  font-size: 30px;
+  color: rgba(0, 255, 132, 0.836);
 }

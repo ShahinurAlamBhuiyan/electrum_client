@@ -50,6 +50,7 @@
 }
 .btn_see_more:hover{
     background-color: #627f5f;
+    box-shadow: 1px 5px 15px rgba(255, 255, 255, 0.207);
 }
 
 
@@ -62,8 +63,7 @@
 .single_card{
     padding: 50px 30px;
     background: rgb(2,0,36);
-background: linear-gradient(90deg, #09120B 0%, #254027 23%, #5d9659 100%);
-
+    background: linear-gradient(90deg, #09120B 0%, #254027 23%, #5d9659 100%);
     width: 100%;
     border: 1px solid gray;
     border-radius: 20px;
@@ -71,6 +71,10 @@ background: linear-gradient(90deg, #09120B 0%, #254027 23%, #5d9659 100%);
     height: 450px;
     /* justify-content: center;
     align-items: center; */
+}
+.single_card:hover{
+    box-shadow: 1px 5px 15px rgba(255, 255, 255, 0.409);
+    /* transition: box-shadow 0.2s ease; */
 }
 .cards{
     display: flex;
