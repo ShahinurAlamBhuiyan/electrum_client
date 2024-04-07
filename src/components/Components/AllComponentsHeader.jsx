@@ -1,5 +1,4 @@
 import searchIcon from "../../assets/search.png"
-import React from 'react'
 
 export default function AllComponentsHeader() {
   return (

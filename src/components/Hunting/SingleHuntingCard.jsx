@@ -1,8 +1,8 @@
 import './Hunting.css'
 import locationLogo from '../../assets/location-logo.png'
 
-const HuntingCard = ({ job }) => {
-  const { companyAddress, companyLogo, jobTitle, salary, jobType } = job
+const SingleHuntingCard = ({ jobs }) => {
+  const { companyAddress, companyLogo, jobTitle, salary, jobType } = jobs
   return (
     <div className='single_card'>
       <div className='transparent'>
@@ -34,10 +34,8 @@ const HuntingCard = ({ job }) => {
           </span>
           /month
         </p>
-        {/* <p>Details</p> */}
-        {/* <button onClick={()=>{}} className='btn_details'>Details</button> */}
       </div>
     </div>
   )
 }
-export default HuntingCard
+export default SingleHuntingCard
