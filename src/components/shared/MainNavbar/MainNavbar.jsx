@@ -25,7 +25,7 @@ const MainNavbar = () => {
             <Nav.Link href='/feed' className='nav-menu disabled'>
               Feed
             </Nav.Link>
-            <Nav.Link href='/components' className='nav-menu disabled'>
+            <Nav.Link href='/components' className='nav-menu'>
               Components
             </Nav.Link>
             <Nav.Link href='/docs' className='nav-menu'>
@@ -34,7 +34,7 @@ const MainNavbar = () => {
             <Nav.Link href='/courses' className='nav-menu'>
               Courses
             </Nav.Link>
-            <Nav.Link href='/qna' className='nav-menu disabled'>
+            <Nav.Link href='/qna' className='nav-menu'>
               QnA
             </Nav.Link>
             <Nav.Link href='/job-hunting' className='nav-menu'>
