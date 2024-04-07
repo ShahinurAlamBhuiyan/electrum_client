@@ -1,6 +1,11 @@
 .navbar {
- background: rgb(21,24,21);
-background: linear-gradient(180deg, rgba(21,24,21,1) 0%, rgba(28,35,30,1) 35%, rgba(34,47,38,1) 100%);
+  background: rgb(21, 24, 21);
+  background: linear-gradient(
+    180deg,
+    rgba(21, 24, 21, 1) 0%,
+    rgba(28, 35, 30, 1) 35%,
+    rgba(34, 47, 38, 1) 100%
+  );
 }
 .navbar-container {
   background-color: transparent;
@@ -17,6 +22,16 @@ background: linear-gradient(180deg, rgba(21,24,21,1) 0%, rgba(28,35,30,1) 35%, r
   color: #ffffffab !important;
 }
 
+.nav-menu button {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(6, 59, 38, 0.546) 0%,
+    rgba(76, 126, 73, 0.9626444327731093) 16%,
+    rgba(92, 5, 25, 0.787) 100%
+  );
+  border: none;
+}
 .navbar-toggler {
   color: rgb(255, 255, 255) !important;
   border: 1px solid #ffffffab !important;
@@ -25,9 +40,8 @@ background: linear-gradient(180deg, rgba(21,24,21,1) 0%, rgba(28,35,30,1) 35%, r
   background-color: transparent !important;
 }
 
-
 @media only screen and (max-width: 600px) {
-  .navbar-container{
+  .navbar-container {
     margin-left: 0px !important;
   }
 }

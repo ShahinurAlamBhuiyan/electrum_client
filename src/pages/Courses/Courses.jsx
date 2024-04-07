@@ -1,6 +1,14 @@
+import CourseBanner from "../../components/Courses/CourseBanner"
+import CourseContainer from  "../../components/Courses/CourseContainer"
+import VideosContainer from "../../components/Courses/VideosContainer"
+
 const Courses = () => {
   return (
-    <div>Courses</div>
+    <div>
+      <CourseBanner/>
+      <CourseContainer/>
+      <VideosContainer/>
+    </div>
   )
 }
 
