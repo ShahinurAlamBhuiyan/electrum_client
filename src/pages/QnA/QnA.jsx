@@ -1,15 +1,12 @@
-import SearchBar from "./SearchBar"
-import QnA from "../../components/QnA/QnAcom"
+import AllQna from '../../components/QnA/AllQna'
+import SearchBar from '../../components/QnA/SearchBar'
+
 const QnA = () => {
   return (
-    <div>
-
-<SearchBar />
-
-<QnA />
-
-    </div>
-   
+    <>
+      <SearchBar />
+      <AllQna />
+    </>
   )
 }
 
