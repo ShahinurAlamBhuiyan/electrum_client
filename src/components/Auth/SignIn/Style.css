@@ -1,11 +1,28 @@
 .brandContainer{
-    width: 35vw;
+    width: 40vw;
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* gap: 50px; */
+}
+
+.socialIcons{
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.socialIcons img{
+    width: 35px;
+    height: 35px;
 }
 
 .formContainer{
-    /* flex: 3; */
-
-    width: 45vw;
+    width: 50vw;
 
     color: black;
 
