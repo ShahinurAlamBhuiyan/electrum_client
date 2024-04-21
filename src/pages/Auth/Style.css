@@ -1,0 +1,16 @@
+.sign-in__container {
+  background-image: url("../../assets/authBack.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* gap: 50px; */
+
+  flex-wrap: wrap;
+
+}
