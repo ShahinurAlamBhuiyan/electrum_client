@@ -1,7 +1,7 @@
 // import searchIcon from "../../assets/cart.png"
-import AllComponentCard from '../../components/Components/AllComponentCard'
-import '../../components/Components/AllComponents.css'
-import AllComponentsHeader from '../../components/Components/AllComponentsHeader'
+import AllComponentCard from '../../components/AllComponents/AllComponentCard'
+import '../../components/AllComponents/AllComponents.css'
+import AllComponentsHeader from '../../components/AllComponents/AllComponentsHeader'
 
 const componentsData = [
   {
