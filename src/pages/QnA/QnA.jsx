@@ -1,8 +1,15 @@
 import SearchBar from "./SearchBar"
-
+import QnA from "../../components/QnA/QnAcom"
 const QnA = () => {
   return (
-    <SearchBar />
+    <div>
+
+<SearchBar />
+
+<QnA />
+
+    </div>
+   
   )
 }
 
