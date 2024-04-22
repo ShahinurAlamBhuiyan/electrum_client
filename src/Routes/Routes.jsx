@@ -10,54 +10,64 @@ import Courses from '../pages/Courses/Courses'
 import Hunting from '../pages/Hunting/Hunting'
 import SignIn from '../pages/Auth/SignIn/SignIn'
 import SignUp from '../pages/Auth/SignUp/SignUp'
+import AuthProvider from '../components/Auth/contexts/authContext'
 
+// Define routes inside the main layout
+const mainRoutes = [
+  {
+    path: '/',
+    element: <Home />
+  },
+  {
+    path: 'posts',
+    element: <Posts />
+  },
+  {
+    path: 'docs',
+    element: <Docs />
+  },
+  {
+    path: 'qna',
+    element: <QnA />
+  },
+  {
+    path: 'components',
+    element: <AllComponents />
+  },
+  {
+    path: 'feed',
+    element: <Feed />
+  },
+  {
+    path: 'courses',
+    element: <Courses />
+  },
+  {
+    path: 'job-hunting',
+    element: <Hunting />
+  },
+  {
+    path: 'sign-in',
+    element: <SignIn />
+  },
+  {
+    path: 'sign-up',
+    element: <SignUp />
+  }
+]
+
+// Create the main router with AuthProvider
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Main />,
-    children: [
-      {
-        path: '/',
-        element: <Home />
-      },
-      {
-        path: '/posts',
-        element: <Posts />
-      },
-      {
-        path: '/docs',
-        element: <Docs />
-      },
-      {
-        path: '/qna',
-        element: <QnA />
-      },
-      {
-        path: '/components',
-        element: <AllComponents />
-      },
-      {
-        path: '/feed',
-        element: <Feed />
-      },
-      {
-        path:'/courses',
-        element:<Courses />
-      },
-      {
-        path:'/job-hunting',
-        element: <Hunting />
-      },
-      {
-        path: '/sign-in',
-        element: <SignIn />
-      },
-      {
-        path: '/sign-up',
-        element: <SignUp />
-      }
-    ]
+    element: (
+      <AuthProvider>
+        <Main />
+      </AuthProvider>
+    ),
+    children: mainRoutes
   }
 ])
 
+// Export the router as a component for rendering
 export default router

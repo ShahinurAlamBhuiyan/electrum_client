@@ -1,6 +1,11 @@
 import { Navbar, Container, Nav, Button } from 'react-bootstrap'
 import './MainNavbar.css'
+
+import { useAuth } from '../../Auth/contexts/authContext'
+import { doSignOut } from '../../Auth/firebase/auth'
 const MainNavbar = () => {
+  const { currentUser } = useAuth()
+
   return (
     <Navbar collapseOnSelect expand='lg' className='navbar'>
       <Container className='navbar-container'>
@@ -56,9 +61,15 @@ const MainNavbar = () => {
             </NavDropdown> */}
           </Nav>
           <Nav className='navbar-container'>
-            <Nav.Link href='/sign-in' className='nav-menu'>
-              <Button>Sign In</Button>
-            </Nav.Link>
+            {currentUser?.email ? (
+              <Nav.Link className='nav-menu'>
+                <Button onClick={() => doSignOut()}>Sign Out</Button>
+              </Nav.Link>
+            ) : (
+              <Nav.Link href='/sign-in' className='nav-menu'>
+                <Button>Sign In</Button>
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

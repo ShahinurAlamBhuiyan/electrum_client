@@ -1,0 +1,138 @@
+/* Main container for the form */
+.signup-form-container {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+}
+
+/* Wrapper for the form content */
+.signup-form-wrapper {
+  background: #fff;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Header for the form */
+.signup-form-header {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1em;
+}
+
+/* Form input styles */
+.signup-form-input {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.75em;
+  margin-bottom: 1em;
+  font-size: 1em;
+  color: black;
+  width: 100%;
+}
+
+.signup-form-input:focus {
+  border-color: rgba(11, 21, 17, 0.9);
+  outline: none;
+}
+
+/* Form label styles */
+.signup-form-label {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: gray;
+}
+
+/* Button styles */
+.signup-form-button {
+  background-color: rgba(11, 21, 17, 0.9);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75em;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1em;
+
+  width: 100%;
+}
+
+.signup-form-button:hover {
+  background-color: rgba(11, 21, 17, 0.75);
+}
+
+/* Error message styles */
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+/* Divider styles */
+.signup-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+}
+
+.signup-divider-line {
+  flex: 1;
+  border-bottom: 2px solid lightgray;
+  margin: 0.5rem 1rem;
+}
+
+.signup-divider-text {
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #333;
+}
+
+/* Link styles */
+.signup-form-link {
+  color: rgba(11, 21, 17, 0.75);
+  font-weight: bold;
+}
+
+.signup-form-link:hover {
+  text-decoration: underline;
+}
+
+/* Google sign-in button */
+.google-sign-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35em;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  background-color: #fff;
+  border-color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgb(100, 97, 97);
+
+  gap: 15px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.google-sign-in:hover {
+  background-color: lightgray;
+}
+
+.google-sign-in:disabled {
+  cursor: not-allowed;
+}
+
+.googleIcon {
+  width: 40px;
+  height: 40px;
+}
