@@ -94,7 +94,7 @@ const SignInFormContainer = () => {
             disabled={isSigningIn}
             className='google-sign-in-button'
           >
-            <img src={googleIcon} alt='google-icon' />
+            <img style={{background:'transparent'}} src={googleIcon} alt='google-icon' />
             Continue with Google
           </button>
         </div>

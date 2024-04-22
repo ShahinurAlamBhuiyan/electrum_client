@@ -53,7 +53,7 @@ const SignUpFormContainer = () => {
       <div className='signup-form-header'>Create Your Account</div>
       <div className='signup-form-wrapper'>
         <form onSubmit={onSubmit}>
-          <div>
+          <>
             <label className='signup-form-label'>Email</label>
             <input
               type='email'
@@ -63,9 +63,9 @@ const SignUpFormContainer = () => {
               onChange={e => setEmail(e.target.value)}
               className='signup-form-input'
             />
-          </div>
+          </>
 
-          <div>
+          <>
             <label className='signup-form-label'>Password</label>
             <input
               type='password'
@@ -75,9 +75,9 @@ const SignUpFormContainer = () => {
               onChange={e => setPassword(e.target.value)}
               className='signup-form-input'
             />
-          </div>
+          </>
 
-          <div>
+          <>
             <label className='signup-form-label'>Confirm Password</label>
             <input
               type='password'
@@ -86,13 +86,13 @@ const SignUpFormContainer = () => {
               onChange={e => setConfirmPassword(e.target.value)}
               className='signup-form-input'
             />
+          </>
+          <div
+            className='signup-form-signin'
+            style={{ background: 'transparent' }}
+          >
+            Already have an account? <Link to='/sign-in'>Sign in</Link>
           </div>
-          <p className='text-black text-end'>
-            Already have an account?{' '}
-            <Link to='/sign-in' className='signup-form-link'>
-              Sign in
-            </Link>
-          </p>
           {errorMessage && <div className='error-message'>{errorMessage}</div>}
 
           <button

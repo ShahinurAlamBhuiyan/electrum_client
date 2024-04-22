@@ -1,5 +1,6 @@
 /* Main container for the form */
 .signup-form-container {
+  background: transparent;
   width: 50vw;
   display: flex;
   flex-direction: column;
@@ -17,8 +18,13 @@
   width: 100%;
 }
 
+.signup-form-wrapper form {
+  background: transparent;
+}
+
 /* Header for the form */
 .signup-form-header {
+  background: transparent;
   font-size: 24px;
   font-weight: 600;
   color: #333;
@@ -27,6 +33,7 @@
 
 /* Form input styles */
 .signup-form-input {
+  background: transparent;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 0.75em;
@@ -43,6 +50,7 @@
 
 /* Form label styles */
 .signup-form-label {
+  background: transparent;
   font-size: 0.875rem;
   font-weight: bold;
   color: gray;
@@ -66,15 +74,36 @@
 .signup-form-button:hover {
   background-color: rgba(11, 21, 17, 0.75);
 }
+/* Link to the sign-in page */
+.signup-form-signin {
+  text-align: right;
+  font-size: 0.85em;
+  margin-bottom: 1em;
+  color: #333;
+  background: transparent;
+}
+
+.signup-form-signin a {
+  background: transparent;
+  color: rgb(11, 21, 17);
+  cursor: pointer;
+
+  text-decoration: underline;
+}
+
 
 /* Error message styles */
 .error-message {
-  color: red;
-  font-weight: bold;
+  background: transparent;
+  color: #d9534f;
+  padding: 0.5em 0;
+  margin-bottom: 1em;
+  text-align: center;
 }
 
 /* Divider styles */
 .signup-divider {
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,22 +112,19 @@
 }
 
 .signup-divider-line {
+  background: transparent;
   flex: 1;
   border-bottom: 2px solid lightgray;
   margin: 0.5rem 1rem;
 }
 
 .signup-divider-text {
+  background: transparent;
   font-weight: bold;
   font-size: 0.875rem;
   color: #333;
 }
 
-/* Link styles */
-.signup-form-link {
-  color: rgba(11, 21, 17, 0.75);
-  font-weight: bold;
-}
 
 .signup-form-link:hover {
   text-decoration: underline;
@@ -106,6 +132,7 @@
 
 /* Google sign-in button */
 .google-sign-in {
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,6 +160,7 @@
 }
 
 .googleIcon {
+  background: transparent;
   width: 40px;
   height: 40px;
 }
