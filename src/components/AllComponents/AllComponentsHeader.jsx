@@ -1,14 +1,18 @@
 import PropTypes from 'prop-types'
-import searchIcon from '../../assets/search.png'
 
-const AllComponentsHeader = ({ setActiveNew, setActiveOld, activeNew }) => {
+const AllComponentsHeader = ({
+  setActiveNew,
+  setActiveOld,
+  activeNew,
+  searchTerm,
+  setSearchTerm
+}) => {
   const handleNewComponents = () => {
-    console.log('new ')
     setActiveNew(true)
     setActiveOld(false)
   }
+
   const handlePreOwnedComponents = () => {
-    console.log('old ')
     setActiveOld(true)
     setActiveNew(false)
   }
@@ -33,8 +37,9 @@ const AllComponentsHeader = ({ setActiveNew, setActiveOld, activeNew }) => {
         className='input_comp'
         type='text'
         placeholder='Search your components here...'
+        value={searchTerm}
+        onChange={e => setSearchTerm(e.target.value)}
       />
-      <img className='search_icon' src={searchIcon} alt='' />
     </div>
   )
 }
@@ -42,7 +47,9 @@ const AllComponentsHeader = ({ setActiveNew, setActiveOld, activeNew }) => {
 AllComponentsHeader.propTypes = {
   setActiveNew: PropTypes.func.isRequired,
   setActiveOld: PropTypes.func.isRequired,
-  activeNew: PropTypes.func.isRequired
+  activeNew: PropTypes.bool.isRequired,
+  searchTerm: PropTypes.string.isRequired,
+  setSearchTerm: PropTypes.func.isRequired
 }
 
 export default AllComponentsHeader

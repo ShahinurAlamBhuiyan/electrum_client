@@ -5,10 +5,22 @@ import AllComponentsHeader from '../../components/AllComponents/AllComponentsHea
 const AllComponents = () => {
   const [activeNew, setActiveNew] = useState(true)
   const [activeOld, setActiveOld] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
+
   return (
     <>
-      <AllComponentsHeader activeNew={activeNew} activeOld={activeOld} setActiveNew={setActiveNew} setActiveOld={setActiveOld} />
-      <AllComponentsContainer activeNew={activeNew} activeOld={activeOld} />
+      <AllComponentsHeader
+        activeNew={activeNew}
+        setActiveNew={setActiveNew}
+        setActiveOld={setActiveOld}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
+      <AllComponentsContainer
+        activeNew={activeNew}
+        activeOld={activeOld}
+        searchTerm={searchTerm}
+      />
     </>
   )
 }

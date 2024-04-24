@@ -1,5 +1,6 @@
-import SingleCard from './SingleCard'
+import PropTypes from 'prop-types'
 
+import SingleCard from './SingleCard'
 import './Styles.css'
 
 const componentsData = [
@@ -100,34 +101,48 @@ const componentsData = [
   }
 ]
 
-const AllComponentsContainer = ({ activeNew, activeOld }) => {
-  const newComponents = componentsData.filter(
-    component => component.type === 'new'
-  )
-  const oldComponents = componentsData.filter(
-    component => component.type === 'old'
-  )
+const AllComponentsContainer = ({ activeNew, activeOld, searchTerm }) => {
+  const filteredNewComponents = componentsData
+    .filter((component) => component.type === 'new')
+    .filter(
+      (component) =>
+        component.productName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        component.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+  const filteredOldComponents = componentsData
+    .filter((component) => component.type === 'old')
+    .filter(
+      (component) =>
+        component.productName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        component.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
   return (
     <>
       <div className='comp_card_container'>
         {activeNew &&
-          newComponents?.map((component, index) => (
+          filteredNewComponents.map((component, index) => (
             <div className='cards' key={index}>
               <SingleCard component={component} />
             </div>
           ))}
 
         {activeOld &&
-          oldComponents?.map((component, index) => (
+          filteredOldComponents.map((component, index) => (
             <div className='cards' key={index}>
               <SingleCard component={component} />
             </div>
           ))}
       </div>
-      <button className='btn_see_more'>See More</button>
     </>
-  )
-}
+  );
+};
 
-export default AllComponentsContainer
+AllComponentsContainer.propTypes = {
+  activeNew: PropTypes.bool.isRequired,
+  activeOld: PropTypes.bool.isRequired,
+  searchTerm: PropTypes.string.isRequired,
+};
+
+export default AllComponentsContainer;
