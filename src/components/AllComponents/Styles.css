@@ -10,7 +10,6 @@
     border: 1px solid gray;
     border-radius: 8px;
     padding: 10px;
-    background-color: #64B357;
     transition: background-color 0.2s ease; /* Add transition for smooth effect */
   }
   
@@ -23,7 +22,6 @@
     border: 1px solid gray;
     border-radius: 8px;
     padding: 10px;
-    background-color: #202E25;
     transition: background-color 0.2s ease; /* Add transition for smooth effect */
   }
   

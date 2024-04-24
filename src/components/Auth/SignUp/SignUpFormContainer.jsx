@@ -41,6 +41,7 @@ const SignUpFormContainer = () => {
     if (!isSigningUp) {
       setIsSigningUp(true)
       doSignInWithGoogle().catch(err => {
+        console.log(err)
         setIsSigningUp(false)
         setErrorMessage('Google sign-up failed. Please try again.')
       })

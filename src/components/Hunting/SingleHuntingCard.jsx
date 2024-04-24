@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 import './Hunting.css'
 import locationLogo from '../../assets/location-logo.png'
 
@@ -38,4 +40,9 @@ const SingleHuntingCard = ({ jobs }) => {
     </div>
   )
 }
+
+SingleHuntingCard.propTypes = {
+  jobs: PropTypes.func.isRequired
+}
+
 export default SingleHuntingCard

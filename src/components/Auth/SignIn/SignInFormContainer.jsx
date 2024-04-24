@@ -21,6 +21,7 @@ const SignInFormContainer = () => {
     if (!isSigningIn) {
       setIsSigningIn(true)
       await doSignInWithEmailAndPassword(email, password).catch(err => {
+        console.log(err)
         setIsSigningIn(false)
         setErrorMessage('Wrong credential!')
       })
@@ -33,6 +34,7 @@ const SignInFormContainer = () => {
     if (!isSigningIn) {
       setIsSigningIn(true)
       doSignInWithGoogle().catch(err => {
+        console.log(err)
         setIsSigningIn(false)
         setErrorMessage('Google sign-in failed. Please try again.')
       })
@@ -94,7 +96,11 @@ const SignInFormContainer = () => {
             disabled={isSigningIn}
             className='google-sign-in-button'
           >
-            <img style={{background:'transparent'}} src={googleIcon} alt='google-icon' />
+            <img
+              style={{ background: 'transparent' }}
+              src={googleIcon}
+              alt='google-icon'
+            />
             Continue with Google
           </button>
         </div>

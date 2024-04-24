@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import people from './data'
-// import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa'
 
 const Reviews = () => {
   const [index, setIndex] = useState(0)
