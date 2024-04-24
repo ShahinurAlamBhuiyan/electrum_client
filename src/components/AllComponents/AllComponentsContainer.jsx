@@ -103,46 +103,53 @@ const componentsData = [
 
 const AllComponentsContainer = ({ activeNew, activeOld, searchTerm }) => {
   const filteredNewComponents = componentsData
-    .filter((component) => component.type === 'new')
+    .filter(component => component.type === 'new')
     .filter(
-      (component) =>
-        component.productName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      component =>
+        component.productName
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase()) ||
         component.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    )
 
   const filteredOldComponents = componentsData
-    .filter((component) => component.type === 'old')
+    .filter(component => component.type === 'old')
     .filter(
-      (component) =>
-        component.productName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      component =>
+        component.productName
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase()) ||
         component.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    )
 
   return (
     <>
       <div className='comp_card_container'>
         {activeNew &&
           filteredNewComponents.map((component, index) => (
-            <div className='cards' key={index}>
-              <SingleCard component={component} />
-            </div>
+            <SingleCard key={index} component={component} />
           ))}
 
         {activeOld &&
           filteredOldComponents.map((component, index) => (
-            <div className='cards' key={index}>
-              <SingleCard component={component} />
-            </div>
+            <SingleCard key={index} component={component} />
           ))}
+
+        {activeNew && filteredNewComponents.length == 0 && (
+          <p style={{ color: 'red' }}>No New components found.</p>
+        )}
+        {activeOld && filteredOldComponents.length == 0 && (
+          <p style={{ color: 'red' }}>No Pre-owned components found.</p>
+        )}
       </div>
     </>
-  );
-};
+  )
+}
 
 AllComponentsContainer.propTypes = {
   activeNew: PropTypes.bool.isRequired,
   activeOld: PropTypes.bool.isRequired,
-  searchTerm: PropTypes.string.isRequired,
-};
+  searchTerm: PropTypes.string.isRequired
+}
 
-export default AllComponentsContainer;
+export default AllComponentsContainer
