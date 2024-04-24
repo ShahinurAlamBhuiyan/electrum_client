@@ -8,6 +8,7 @@ import AllComponents from '../pages/AllComponents/AllComponents'
 import Feed from '../pages/Feed/Feed'
 import Courses from '../pages/Courses/Courses'
 import Hunting from '../pages/Hunting/Hunting'
+import Competition from '../pages/Competition/Competition'
 import SignIn from '../pages/Auth/SignIn/SignIn'
 import SignUp from '../pages/Auth/SignUp/SignUp'
 import AuthProvider from '../components/Auth/contexts/authContext'
@@ -47,6 +48,10 @@ const mainRoutes = [
     element: <Hunting />
   },
   {
+    path: 'competition',
+    element: <Competition />
+  },
+  {
     path: 'sign-in',
     element: <SignIn />
   },
@@ -71,3 +76,4 @@ const router = createBrowserRouter([
 
 // Export the router as a component for rendering
 export default router
+
