@@ -11,6 +11,9 @@ import Hunting from '../pages/Hunting/Hunting'
 import SignIn from '../pages/Auth/SignIn/SignIn'
 import SignUp from '../pages/Auth/SignUp/SignUp'
 import AuthProvider from '../components/Auth/contexts/authContext'
+import ComponentDetails from '../pages/AllComponents/ComponentDetails'
+import CourseDetails from '../pages/Courses/CourseDetails'
+import JobDetails from '../pages/Hunting/JobDetails'
 
 // Define routes inside the main layout
 const mainRoutes = [
@@ -35,6 +38,10 @@ const mainRoutes = [
     element: <AllComponents />
   },
   {
+    path: 'components/:component_id',
+    element: <ComponentDetails />
+  },
+  {
     path: 'feed',
     element: <Feed />
   },
@@ -43,8 +50,16 @@ const mainRoutes = [
     element: <Courses />
   },
   {
+    path: 'courses/:course_id',
+    element: <CourseDetails />
+  },
+  {
     path: 'job-hunting',
     element: <Hunting />
+  },
+  {
+    path: 'job-hunting/:job_id',
+    element: <JobDetails />
   },
   {
     path: 'sign-in',

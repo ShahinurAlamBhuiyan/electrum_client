@@ -2,11 +2,13 @@ import PropTypes from 'prop-types'
 
 import './Hunting.css'
 import locationLogo from '../../assets/location-logo.png'
+import { useNavigate } from 'react-router-dom'
 
 const SingleHuntingCard = ({ jobs }) => {
-  const { companyAddress, companyLogo, jobTitle, salary, jobType } = jobs
+  const navigate = useNavigate()
+  const { companyAddress, companyLogo, jobTitle, salary, jobType, id } = jobs
   return (
-    <div className='single_card'>
+    <div className='single_card' onClick={() => navigate(`/job-hunting/${id}`)}>
       <div className='transparent'>
         <img className='transparent' src={companyLogo} />
         <h3 className='transparent job_title'>{jobTitle}</h3>

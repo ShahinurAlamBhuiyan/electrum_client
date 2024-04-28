@@ -1,10 +1,15 @@
 import PropTypes from 'prop-types'
 import './Style.css'
+import { useNavigate } from 'react-router-dom'
 
 const SingleCourseCard = ({ course }) => {
+  const navigate = useNavigate()
   console.log(course)
   return (
-    <div className='SingleCourse'>
+    <div
+      className='SingleCourse'
+      onClick={() => navigate(`/courses/${course.id}`)}
+    >
       <img className='SingleCourse-img' src={course.img} alt={course.title} />
       <div className=''>
         <h5 className='course-title text-white'>{course.title}</h5>
