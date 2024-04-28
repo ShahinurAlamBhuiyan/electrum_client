@@ -33,7 +33,7 @@ const CourseContainer = () => {
     <div className='course-container'>
       <div className='course'>
         <h2>Courses</h2>
-        <button type='button' className='btn btn-outline-success'>
+        <button disabled type='button' className='btn btn-outline-success'>
           View All
         </button>
       </div>

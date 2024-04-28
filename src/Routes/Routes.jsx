@@ -12,7 +12,7 @@ import SignIn from '../pages/Auth/SignIn/SignIn'
 import SignUp from '../pages/Auth/SignUp/SignUp'
 import AuthProvider from '../components/Auth/contexts/authContext'
 import ComponentDetails from '../pages/AllComponents/ComponentDetails'
-import CourseDetails from '../pages/Courses/CourseDetails'
+import CourseDetails from '../pages/Courses/CourseDetails/CourseDetails'
 import JobDetails from '../pages/Hunting/JobDetails'
 
 // Define routes inside the main layout

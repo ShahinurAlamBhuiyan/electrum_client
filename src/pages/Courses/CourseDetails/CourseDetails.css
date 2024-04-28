@@ -1,0 +1,63 @@
+.course-Details {
+    display: flex;
+  flex-direction: column;
+  }
+  
+  .course-Banner {
+    height: 70vh; 
+    position: relative; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .Banner-overlay {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  .course-content {
+    text-align: center;
+    background-color: transparent;
+    color: white;
+  }
+  
+  .course-content h2 {
+    background-color: transparent;
+    font-size: 2rem;
+  }
+  
+  .course-content p {
+    background-color: transparent;
+    font-size: 1.25rem; 
+  }
+
+/*..............video.........*/
+
+  .course-video {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    padding-top: 120px;
+  }
+  
+  .course-video iframe {
+    width: 50%; 
+    height: 315px; 
+    border: none; 
+  }
+  
+  .course-description {
+    text-align: center; 
+    padding: 3% 15%; 
+    font-size: 1rem;
+    /* padding-left: 50%; 
+    padding-right: 50%; */
+  }
