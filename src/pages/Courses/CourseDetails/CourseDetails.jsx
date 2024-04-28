@@ -44,7 +44,7 @@ const CourseDetails = () => {
   const course = courses.find((c) => c.id === parseInt(course_id, 10)); // Convert to integer
 
   if (!course) {
-    return <div>Course not found</div>; // Handle invalid or nonexistent ID
+    return <div>Course not found</div>; 
   }
 
   return (
