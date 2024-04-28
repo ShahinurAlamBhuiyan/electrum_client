@@ -1,0 +1,118 @@
+/* .hunting_container{
+    background-image: url("https://i.ibb.co/G53FW47/ellips.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+} */
+
+/* search bar */
+.search_container {
+  border: 1px solid #D7D8D7; /* Consider adjusting border color for better visibility */
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 10%;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-top: 50px;
+  background: rgb(15, 19, 17); /* Very dark base color */
+  background: linear-gradient(90deg, rgba(15, 19, 17, 1) 0%, rgba(38, 42, 39, 1) 22%, rgba(63, 69, 66, 1) 100%); /* Very dark gradient */
+}
+
+.job_input {
+  border-radius: 10px;
+  padding: 5px;
+  width: 90%;
+  background-color: transparent; /* Remove background for better contrast */
+  color: #fff; /* Set text color to white for better readability */
+}
+
+.btn_job_search{
+    border: 1px solid #D7D8D7;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #475445;
+}
+.btn_job_search:hover{
+    background-color: #627f5f;
+}
+.btn_see_more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #D7D8D7;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #475445;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.btn_see_more:hover{
+    background-color: #627f5f;
+    box-shadow: 1px 5px 15px rgba(255, 255, 255, 0.207);
+}
+
+
+/* cards */
+.card-container{
+    /* padding-top: 50px;
+    padding-bottom: 50px; */
+    padding: 50px 15px;
+}
+.single_card{
+    padding: 50px 30px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, #09120B 0%, #254027 23%, #5d9659 100%);
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 20px;
+    width: 330px;
+    height: 450px;
+    /* justify-content: center;
+    align-items: center; */
+}
+.single_card:hover{
+    box-shadow: 1px 5px 15px rgba(255, 255, 255, 0.409);
+    /* transition: box-shadow 0.2s ease; */
+}
+.cards{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+.extra_info{
+    border: 1px solid rgb(255, 234, 208);
+    border-radius: 35px;
+    padding: 5px 8px;
+    
+    /* margin: 0 10px; */
+    text-align: center;
+    margin-right: 10px;
+    font-size: 13px;
+}
+/* .btn_details{
+    border: 1px solid antiquewhite;
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: #435544;
+
+    cursor: pointer;
+} */
+.transparent{
+    background-color: transparent;
+}
+.flex_item{
+    display: flex;
+    padding-top: 15px;
+}
+.job_title{
+    padding: 20px 0;
+}
+.card_footer{
+    justify-content: space-between;
+}
+

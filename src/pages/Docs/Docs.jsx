@@ -1,6 +1,10 @@
+import DocsCard from "../../components/Docs/DocsCard"
+
 const Docs = () => {
   return (
-    <div>Docs</div>
+    <div>
+      <DocsCard />
+    </div>
   )
 }
 

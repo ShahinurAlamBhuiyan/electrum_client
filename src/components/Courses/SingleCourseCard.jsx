@@ -1,22 +1,15 @@
-import React from 'react'
 import './Style.css'
 
-const SingleCourseCard = ({course}) => {
-
+const SingleCourseCard = ({ course }) => {
+  console.log(course)
   return (
-    <div className="card">
-            <div>
-              <img
-                className="card-img-top"
-                src={course.img}
-                alt={course.title}
-              />
-            </div>
-            <div className="card-body">
-              <h5 className="card-title text-white">{course.title}</h5>
-              <p className="card-text">{course.text}</p>
-            </div>
-        </div>
+    <div className='SingleCourse'>
+      <img className='SingleCourse-img' src={course.img} alt={course.title} />
+      <div className=''>
+        <h5 className='course-title text-white'>{course.title}</h5>
+        <p className='course-details'>{course.text}</p>
+      </div>
+    </div>
   )
 }
 

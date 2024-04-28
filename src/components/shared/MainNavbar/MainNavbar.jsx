@@ -22,7 +22,7 @@ const MainNavbar = () => {
             <Nav.Link href='/' className='nav-menu'>
               Home
             </Nav.Link>
-            <Nav.Link href='/feed' className='nav-menu'>
+            <Nav.Link href='/feed' className='nav-menu disabled'>
               Feed
             </Nav.Link>
             <Nav.Link href='/components' className='nav-menu'>
