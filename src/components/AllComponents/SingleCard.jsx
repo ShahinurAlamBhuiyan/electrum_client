@@ -22,7 +22,12 @@ const AllComponentCard = ({ component }) => {
 }
 
 AllComponentCard.propTypes = {
-  component: PropTypes.func.isRequired
+  component: PropTypes.shape({
+    productImgURL: PropTypes.string,
+    productName: PropTypes.string,
+    description: PropTypes.string,
+    price: PropTypes.string
+  }).isRequired
 }
 
 export default AllComponentCard
