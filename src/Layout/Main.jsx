@@ -1,16 +1,22 @@
-import { Outlet } from 'react-router-dom'
-import MainNavbar from '../components/shared/MainNavbar/MainNavbar'
-import './Style.css'
-import Footer from '../components/shared/Footer/Footer'
+import { Outlet, useLocation } from 'react-router-dom';
+import MainNavbar from '../components/shared/MainNavbar/MainNavbar';
+import Footer from '../components/shared/Footer/Footer';
+import './Style.css';
 
 const Main = () => {
+  const location = useLocation();
+
+  const hiddenPaths = ['/sign-in', '/sign-up'];
+
+  const shouldShowNavAndFooter = !hiddenPaths.includes(location.pathname);
+
   return (
     <>
-      {/* <MainNavbar /> */}
+      {shouldShowNavAndFooter && <MainNavbar />}
       <Outlet />
-      {/* <Footer /> */}
+      {shouldShowNavAndFooter && <Footer />}
     </>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

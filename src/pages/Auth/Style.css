@@ -3,10 +3,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+
   height: 100vh;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
   /* gap: 50px; */

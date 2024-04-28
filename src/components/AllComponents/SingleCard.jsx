@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import cartIcon from '../../assets/cart.png'
 
 const AllComponentCard = ({ component }) => {
@@ -18,6 +19,10 @@ const AllComponentCard = ({ component }) => {
       </div>
     </div>
   )
+}
+
+AllComponentCard.propTypes = {
+  component: PropTypes.func.isRequired
 }
 
 export default AllComponentCard

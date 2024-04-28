@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const JobDetails = ({ job }) => {
   const { title, company, location, type, salary, description, benefits } = job
   return (
@@ -28,6 +30,10 @@ const JobDetails = ({ job }) => {
       </div>
     </div>
   )
+}
+
+JobDetails.propTypes = {
+  job: PropTypes.func.isRequired
 }
 
 export default JobDetails

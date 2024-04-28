@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import './Style.css'
 
 const SingleCourseCard = ({ course }) => {
@@ -11,6 +12,10 @@ const SingleCourseCard = ({ course }) => {
       </div>
     </div>
   )
+}
+
+SingleCourseCard.propTypes = {
+  course: PropTypes.func.isRequired
 }
 
 export default SingleCourseCard

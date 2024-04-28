@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.5",
+    "firebase": "^10.11.0",
     "mdb-react-ui-kit": "^7.2.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-card-slider-component": "^1.0.9",
