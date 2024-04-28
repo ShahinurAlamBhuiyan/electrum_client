@@ -53,7 +53,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     margin-right: 5%;
     margin-left: 5%;
   }
@@ -64,5 +64,5 @@
   }
 
   .videos button{
-    margin-top: 3.5%;
+    margin-top: 6.5%;
   }
