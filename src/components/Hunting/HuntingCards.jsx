@@ -2,6 +2,7 @@ import SingleHuntingCard from './SingleHuntingCard'
 
 const huntingData = [
   {
+    id: 1,
     companyLogo: 'https://i.ibb.co/vqV9YDm/tesla-logo.png',
     jobTitle: 'Senior product manager in tesla',
     companyAddress: 'California, CA',
@@ -9,6 +10,7 @@ const huntingData = [
     salary: '$2k'
   },
   {
+    id: 2,
     companyLogo: 'https://i.ibb.co/g998qkV/AT-T-logo.png',
     jobTitle: 'Senior product manager in AT&T',
     companyAddress: 'California, CA',
@@ -16,6 +18,7 @@ const huntingData = [
     salary: '$2.5k'
   },
   {
+    id: 3,
     companyLogo: 'https://i.ibb.co/TPV1Zyj/ford-logo.png',
     jobTitle: 'Senior product manager in Ford',
     companyAddress: 'California, CA',
@@ -23,6 +26,7 @@ const huntingData = [
     salary: '$3k'
   },
   {
+    id: 4,
     companyLogo: 'https://i.ibb.co/g998qkV/AT-T-logo.png',
     jobTitle: 'Senior product manager in AT&T',
     companyAddress: 'California, CA',
@@ -30,6 +34,7 @@ const huntingData = [
     salary: '$2.5k'
   },
   {
+    id: 5,
     companyLogo: 'https://i.ibb.co/vqV9YDm/tesla-logo.png',
     jobTitle: 'Senior product manager in tesla',
     companyAddress: 'California, CA',
@@ -37,6 +42,7 @@ const huntingData = [
     salary: '$2k'
   },
   {
+    id: 7,
     companyLogo: 'https://i.ibb.co/g998qkV/AT-T-logo.png',
     jobTitle: 'Senior product manager in AT&T',
     companyAddress: 'California, CA',
@@ -44,6 +50,7 @@ const huntingData = [
     salary: '$2.5k'
   },
   {
+    id: 8,
     companyLogo: 'https://i.ibb.co/TPV1Zyj/ford-logo.png',
     jobTitle: 'Senior product manager in Ford',
     companyAddress: 'California, CA',
