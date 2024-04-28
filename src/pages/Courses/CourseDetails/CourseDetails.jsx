@@ -38,10 +38,10 @@ const courses = [
 ];
 
 const CourseDetails = () => {
-  const { course_id } = useParams(); // Extract course_id from URL parameters
+  const { course_id } = useParams(); 
 
-  // Find the course with the matching ID
-  const course = courses.find((c) => c.id === parseInt(course_id, 10)); // Convert to integer
+  
+  const course = courses.find((c) => c.id === parseInt(course_id, 10));
 
   if (!course) {
     return <div>Course not found</div>; 
