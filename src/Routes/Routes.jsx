@@ -11,6 +11,7 @@ import Hunting from '../pages/Hunting/Hunting'
 import SignIn from '../pages/Auth/SignIn/SignIn'
 import SignUp from '../pages/Auth/SignUp/SignUp'
 import AuthProvider from '../components/Auth/contexts/authContext'
+import ComponentDetails from '../pages/AllComponents/ComponentDetails'
 
 // Define routes inside the main layout
 const mainRoutes = [
@@ -33,6 +34,10 @@ const mainRoutes = [
   {
     path: 'components',
     element: <AllComponents />
+  },
+  {
+    path: 'components/:component_id',
+    element: <ComponentDetails />
   },
   {
     path: 'feed',

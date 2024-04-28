@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types'
 import cartIcon from '../../assets/cart.png'
+import { useNavigate } from 'react-router-dom'
 
 const AllComponentCard = ({ component }) => {
-  const { productImgURL, productName, description, price } = component
+  const navigate = useNavigate()
+  const { productImgURL, productName, description, price, id } = component
+
+  const handleComponentClick = () => {
+    navigate(`/components/${id}`)
+  }
 
   return (
-    <div className='comp_single_card'>
+    <div className='comp_single_card' onClick={handleComponentClick}>
       <div className='product_img_container'>
         <img className='product_img' src={productImgURL} alt='' />
       </div>
@@ -26,7 +32,8 @@ AllComponentCard.propTypes = {
     productImgURL: PropTypes.string,
     productName: PropTypes.string,
     description: PropTypes.string,
-    price: PropTypes.string
+    price: PropTypes.string,
+    id: PropTypes.string,
   }).isRequired
 }
 
