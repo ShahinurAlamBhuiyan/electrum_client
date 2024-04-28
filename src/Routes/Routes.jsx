@@ -12,6 +12,7 @@ import SignIn from '../pages/Auth/SignIn/SignIn'
 import SignUp from '../pages/Auth/SignUp/SignUp'
 import AuthProvider from '../components/Auth/contexts/authContext'
 import ComponentDetails from '../pages/AllComponents/ComponentDetails'
+import DocDetails from '../pages/Docs/DocDetails'
 
 // Define routes inside the main layout
 const mainRoutes = [
@@ -26,6 +27,10 @@ const mainRoutes = [
   {
     path: 'docs',
     element: <Docs />
+  },
+  {
+    path: 'doc/:doc_id',
+    element: <DocDetails />
   },
   {
     path: 'qna',

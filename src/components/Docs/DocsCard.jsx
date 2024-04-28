@@ -1,7 +1,9 @@
 import { Button, Card } from 'react-bootstrap'
 import './Style.css'
+import { useNavigate } from 'react-router-dom'
 const data = [
   {
+    id: 1,
     title: 'Arduino UNO',
     imageURL:
       'https://upload.wikimedia.org/wikipedia/commons/3/38/Arduino_Uno_-_R3.jpg',
@@ -9,7 +11,7 @@ const data = [
       'he Arduino Uno is an open-source microcontroller board based on the Microchip...',
     published: 'Feb 10, 2024. 5 min read.Book'
   },
-  {
+  {id: 2,
     title: 'Resistor',
     imageURL:
       'https://atlas-content-cdn.pixelsquid.com/stock-images/resistor-rvAElYD-600.jpg',
@@ -17,7 +19,7 @@ const data = [
       'A resistor is a passive two-terminal electrical component that implements electrical....',
     published: 'Feb 25, 2024. 5 min read.Book'
   },
-  {
+  {id: 3,
     title: 'Display Devices',
     imageURL:
       'https://electroglobal.in/wp-content/uploads/2023/09/16x2LCDDisplay_GreenBacklight-ELECTRO-GLOBAL-1.webp',
@@ -25,7 +27,7 @@ const data = [
       'A display device is an output device for presentation of information in visual or tactile form....',
     published: 'May 20, 2024. 8 min read.Book'
   },
-  {
+  {id: 4,
     title: 'LED',
     imageURL:
       'https://www.robotechbd.com/wp-content/uploads/2021/07/frosted-leds-red-green-blue-yellow-white-800x800-1.jpg',
@@ -34,6 +36,7 @@ const data = [
     published: 'Mar 10, 2024. 10 min read.Book'
   },
   {
+    id: 5,
     title: 'Integrated circui',
     imageURL:
       'https://5.imimg.com/data5/IX/NW/MY-43262407/integrated-circuits-500x500.jpg',
@@ -42,6 +45,7 @@ const data = [
     published: 'Jan 10, 2024. 6 min read.Book'
   },
   {
+    id: 6,
     title: 'Sensor',
     imageURL: 'https://kitsguru.com/cdn/shop/products/KG002.jpg?v=1638593101',
     description:
@@ -51,11 +55,12 @@ const data = [
 ]
 
 const DocsCard = () => {
+  const navigate = useNavigate();
   return (
     <div>
         <div className='card-container'>
         {data.map((item, index) => (
-        <Card className='single-card' key={index}>
+        <Card onClick={() => navigate(`/doc/${item.id}`)} className='single-card' key={index}>
           <div
             style={{
               background: '#484747',
