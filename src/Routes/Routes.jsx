@@ -14,6 +14,7 @@ import AuthProvider from '../components/Auth/contexts/authContext'
 import ComponentDetails from '../pages/AllComponents/ComponentDetails/ComponentDetails'
 import CourseDetails from '../pages/Courses/CourseDetails'
 import JobDetails from '../pages/Hunting/JobDetails'
+import { LoadingProvider } from '../Providers'
 
 // Define routes inside the main layout
 const mainRoutes = [
@@ -77,7 +78,9 @@ const router = createBrowserRouter([
     path: '/',
     element: (
       <AuthProvider>
-        <Main />
+        <LoadingProvider>
+          <Main />
+        </LoadingProvider>
       </AuthProvider>
     ),
     children: mainRoutes
