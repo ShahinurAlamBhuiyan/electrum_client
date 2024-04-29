@@ -97,7 +97,7 @@ const huntingData = [
     ]
   },
   {
-    id: 7,
+    id: 6,
     companyLogo: 'https://i.ibb.co/g998qkV/AT-T-logo.png',
     jobTitle: 'Senior Product Manager',
     company: 'AT&T',
@@ -116,7 +116,7 @@ const huntingData = [
     ]
   },
   {
-    id: 8,
+    id: 7,
     companyLogo: 'https://i.ibb.co/TPV1Zyj/ford-logo.png',
     jobTitle: 'UX/UI Designer',
     company: 'Ford',
