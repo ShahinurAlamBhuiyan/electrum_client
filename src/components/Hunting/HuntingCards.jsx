@@ -1,4 +1,5 @@
 import SingleHuntingCard from './SingleHuntingCard'
+import React, { useState } from 'react';
 
 const huntingData = [
   {
@@ -42,7 +43,7 @@ const huntingData = [
     salary: '$2k'
   },
   {
-    id: 7,
+    id: 6,
     companyLogo: 'https://i.ibb.co/g998qkV/AT-T-logo.png',
     jobTitle: 'Senior product manager in AT&T',
     companyAddress: 'California, CA',
@@ -50,7 +51,7 @@ const huntingData = [
     salary: '$2.5k'
   },
   {
-    id: 8,
+    id: 7,
     companyLogo: 'https://i.ibb.co/TPV1Zyj/ford-logo.png',
     jobTitle: 'Senior product manager in Ford',
     companyAddress: 'California, CA',
@@ -60,18 +61,33 @@ const huntingData = [
 ]
 
 const HuntingCards = () => {
+  const [visibleJobs, setVisibleJobs] = useState(3);
+
+  const showMoreJobs = () => {
+    setVisibleJobs(huntingData.length);
+  };
+  const showLessJobs = () => {
+    setVisibleJobs(3);
+  };
+
   return (
     <div>
       <div className='card-container'>
         <div className='cards'>
-          {huntingData?.map((jobs, index) => (
-            <SingleHuntingCard key={index} jobs={jobs} />
+          {huntingData.slice(0, visibleJobs).map((job, index) => (
+            <SingleHuntingCard key={index} jobs={job} />
           ))}
         </div>
       </div>
-      <button className='btn_see_more'>See More</button>
+      {/* Only show the button if there are more jobs to show */}
+      {visibleJobs < huntingData.length && (
+        <button className='btn_see_more' onClick={showMoreJobs}>Show More</button>
+      )}
+      {visibleJobs > 3 && (
+        <button className='btn_see_more' onClick={showLessJobs}>Show Less</button>
+      )}
     </div>
-  )
-}
+  );
+};
 
 export default HuntingCards
