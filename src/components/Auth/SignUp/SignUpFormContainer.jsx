@@ -7,11 +7,14 @@ import {
   doSignInWithGoogle
 } from '../firebase/auth'
 
+import axios from 'axios'
+
 import googleIcon from '../../../assets/Social_icons/googleIcon.png'
 import { useAuth } from '../contexts/authContext'
 
 const SignUpFormContainer = () => {
   const { userLoggedIn } = useAuth()
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -29,6 +32,17 @@ const SignUpFormContainer = () => {
       try {
         await doCreateUserWithEmailAndPassword(email, password)
         alert('your account created successfully!')
+        try {
+          const response = await axios.post(
+            'http://localhost:3001/api/signup',
+            { name, email, password }
+          )
+          console.log(response.data.message)
+        } catch (error) {
+          console.error('Sign-up failed:', error.response.data.error)
+          setErrorMessage('Sign-up failed. Please try again.')
+          setIsSigningUp(false)
+        }
       } catch (error) {
         setErrorMessage('Sign-up failed. Please try again.')
         setIsSigningUp(false)
@@ -54,6 +68,17 @@ const SignUpFormContainer = () => {
       <div className='signup-form-header'>Create Your Account</div>
       <div className='signup-form-wrapper'>
         <form onSubmit={onSubmit}>
+          <>
+            <label className='signup-form-label'>Name</label>
+            <input
+              type='name'
+              autoComplete='name'
+              required
+              value={name}
+              onChange={e => setName(e.target.value)}
+              className='signup-form-input'
+            />
+          </>
           <>
             <label className='signup-form-label'>Email</label>
             <input
