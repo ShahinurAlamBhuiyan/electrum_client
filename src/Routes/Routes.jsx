@@ -14,7 +14,7 @@ import SignUp from '../pages/Auth/SignUp/SignUp'
 import AuthProvider from '../components/Auth/contexts/authContext'
 import ComponentDetails from '../pages/AllComponents/ComponentDetails'
 import CourseDetails from '../pages/Courses/CourseDetails'
-import JobDetails from '../pages/Hunting/JobDetails'
+import JobDetails from '../pages/Hunting/JobDetails/JobDetails'
 
 // Define routes inside the main layout
 const mainRoutes = [
