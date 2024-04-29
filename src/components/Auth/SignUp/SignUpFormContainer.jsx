@@ -16,6 +16,7 @@ const SignUpFormContainer = () => {
   const { userLoggedIn } = useAuth()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [role] = useState('user')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [isSigningUp, setIsSigningUp] = useState(false)
@@ -35,7 +36,7 @@ const SignUpFormContainer = () => {
         try {
           const response = await axios.post(
             'http://localhost:3001/api/signup',
-            { name, email, password }
+            { name, email, password, role }
           )
           console.log(response.data.message)
         } catch (error) {

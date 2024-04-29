@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 
 const SingleCourseCard = ({ course }) => {
   const navigate = useNavigate()
-  console.log(course)
   return (
     <div
       className='SingleCourse'
