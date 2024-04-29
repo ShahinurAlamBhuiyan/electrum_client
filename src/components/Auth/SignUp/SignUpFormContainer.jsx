@@ -33,17 +33,7 @@ const SignUpFormContainer = () => {
       try {
         await doCreateUserWithEmailAndPassword(email, password)
         alert('your account created successfully!')
-        try {
-          const response = await axios.post(
-            'http://localhost:3001/api/signup',
-            { name, email, password, role }
-          )
-          console.log(response.data.message)
-        } catch (error) {
-          console.error('Sign-up failed:', error.response.data.error)
-          setErrorMessage('Sign-up failed. Please try again.')
-          setIsSigningUp(false)
-        }
+        storeUserToDB(name, email, role)
       } catch (error) {
         setErrorMessage('Sign-up failed. Please try again.')
         setIsSigningUp(false)
@@ -51,15 +41,35 @@ const SignUpFormContainer = () => {
     }
   }
 
+  // POST REQUEST....
+  const storeUserToDB = async (name, email, role) => {
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_SERVER}/signup`, {
+        name,
+        email,
+        role
+      })
+      console.log(response.data.message)
+    } catch (error) {
+      console.error('Sign-up failed:', error.response.data.error)
+      setErrorMessage('Sign-up failed. Please try again.')
+      setIsSigningUp(false)
+    }
+  }
+
   const onGoogleSignUp = e => {
     e.preventDefault()
     if (!isSigningUp) {
       setIsSigningUp(true)
-      doSignInWithGoogle().catch(err => {
-        console.log(err)
-        setIsSigningUp(false)
-        setErrorMessage('Google sign-up failed. Please try again.')
-      })
+      doSignInWithGoogle()
+        .then(res => {
+          storeUserToDB(res.user.displayName, res.user.email, role)
+        })
+        .catch(err => {
+          console.log(err)
+          setIsSigningUp(false)
+          setErrorMessage('Google sign-up failed. Please try again.')
+        })
     }
   }
 
