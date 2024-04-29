@@ -42,7 +42,7 @@ const VideosContainer = () => {
     <div className='video-container'>
       <div className='videos'>
         <h2>Popular Videos</h2>
-        <button type='button' className='btn btn-outline-success'>
+        <button type='button' className='btn btn-outline-success' disabled>
           View All
         </button>
       </div>

@@ -27,15 +27,20 @@
   border: 0.1px solid rgb(70, 68, 68);
   height: 500px !important;
   cursor: pointer;
+  margin-bottom: 40px;
 }
 .course {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
-    margin-right: 5%;
-    margin-left: 5%;
-    padding-top: 2.5%;
+  margin-bottom: 20px;
+    margin-right: 7.5%;
+    margin-left: 8.5%;
+    padding-top: 5%;
+}
+
+.course h2{
+  text-decoration: underline;
 }
 
 .SingleCourse-img {
@@ -55,6 +60,7 @@
 /*.........Videos Section.......*/
 .video-container {
   margin: auto;
+  padding-bottom: 40px;
 }
 
   
@@ -62,9 +68,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
-    margin-right: 5%;
-    margin-left: 5%;
+    margin: 10px 5%;
   }
 
 .video_text_container {
@@ -73,4 +77,9 @@
 
   .videos button{
     margin: 2.5%;
+  }
+
+  .videos h2{
+    padding: 20px;
+    text-decoration: underline;
   }

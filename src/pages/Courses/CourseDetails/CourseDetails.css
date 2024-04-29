@@ -45,7 +45,7 @@
     display: flex; 
     justify-content: center; 
     align-items: center;
-    padding-top: 120px;
+    padding-top: 10px;
   }
   
   .course-video iframe {
@@ -58,6 +58,4 @@
     text-align: center; 
     padding: 3% 15%; 
     font-size: 1rem;
-    /* padding-left: 50%; 
-    padding-right: 50%; */
   }
