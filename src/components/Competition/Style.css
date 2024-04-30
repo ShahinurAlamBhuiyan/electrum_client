@@ -12,9 +12,11 @@
     padding-left: 10%;
 }
 
-.competition-card{
+.competition-cards{
     width: 70%;
-
+    /* padding: 500px; */
+    padding-top: 100px;
+    /* background-color: #fff; */
 }
 .competition-card-container {
     display: flex;
@@ -22,6 +24,8 @@
     align-items: center;  /* Horizontally centers the cards when in column mode */
     justify-content: center; /* Vertically centers the cards */
     margin-top: 20px;
+    /* background-color: #fff; */
+    /* padding: 50px; */
 }
 
 .competition-card-details{
@@ -31,6 +35,8 @@
     /* padding: 0 auto; */
     margin: auto auto;
     padding-left: 10%;
+    /* background-color: #fff; */
+    /* padding: 50px; */
 }
 /* img{
     height: 30%;
@@ -45,7 +51,8 @@
     top: 50%; /* Align vertically */
     width: 20px;
     height: 20px;
-    margin-top: -10px; /* Half the height to perfectly center */
+    margin-top: -10px; 
+    /* padding-top: 40px; */
 }
 
 .slick-slider .slick-prev {
