@@ -124,12 +124,14 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+  text-decoration: none;
 }
 
 .job_description_Container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   flex-direction: column;
   margin-top: 20px;
@@ -172,6 +174,15 @@
 }
 
 .job_description {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+  gap: 20px;
+
+  padding: 20px;
+
   background: rgb(15, 19, 17); /* Very dark base color */
   background: linear-gradient(
     90deg,
@@ -217,4 +228,9 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+}
+
+
+.bg_transparent{
+  background: transparent;
 }
