@@ -1,77 +1,62 @@
-import SingleHuntingCard from './SingleHuntingCard'
-
-const huntingData = [
-  {
-    id: 1,
-    companyLogo: 'https://i.ibb.co/vqV9YDm/tesla-logo.png',
-    jobTitle: 'Senior product manager in tesla',
-    companyAddress: 'California, CA',
-    jobType: ['Full Time', 'Senion Level', 'Remote'],
-    salary: '$2k'
-  },
-  {
-    id: 2,
-    companyLogo: 'https://i.ibb.co/g998qkV/AT-T-logo.png',
-    jobTitle: 'Senior product manager in AT&T',
-    companyAddress: 'California, CA',
-    jobType: ['Full Time', 'Senion Level', 'Remote'],
-    salary: '$2.5k'
-  },
-  {
-    id: 3,
-    companyLogo: 'https://i.ibb.co/TPV1Zyj/ford-logo.png',
-    jobTitle: 'Senior product manager in Ford',
-    companyAddress: 'California, CA',
-    jobType: ['Full Time', 'Senion Level', 'Remote'],
-    salary: '$3k'
-  },
-  {
-    id: 4,
-    companyLogo: 'https://i.ibb.co/g998qkV/AT-T-logo.png',
-    jobTitle: 'Senior product manager in AT&T',
-    companyAddress: 'California, CA',
-    jobType: ['Full Time', 'Senion Level', 'Remote'],
-    salary: '$2.5k'
-  },
-  {
-    id: 5,
-    companyLogo: 'https://i.ibb.co/vqV9YDm/tesla-logo.png',
-    jobTitle: 'Senior product manager in tesla',
-    companyAddress: 'California, CA',
-    jobType: ['Full Time', 'Senion Level', 'Remote'],
-    salary: '$2k'
-  },
-  {
-    id: 7,
-    companyLogo: 'https://i.ibb.co/g998qkV/AT-T-logo.png',
-    jobTitle: 'Senior product manager in AT&T',
-    companyAddress: 'California, CA',
-    jobType: ['Full Time', 'Senion Level', 'Remote'],
-    salary: '$2.5k'
-  },
-  {
-    id: 8,
-    companyLogo: 'https://i.ibb.co/TPV1Zyj/ford-logo.png',
-    jobTitle: 'Senior product manager in Ford',
-    companyAddress: 'California, CA',
-    jobType: ['Full Time', 'Senion Level', 'Remote'],
-    salary: '$3k'
-  }
-]
+import  { useEffect, useState } from 'react';
+import axios from 'axios';
+import SingleHuntingCard from './SingleHuntingCard';
+import All_JOB_REQUEST from '../../utils';
 
 const HuntingCards = () => {
+  const [visibleJobs, setVisibleJobs] = useState(3);
+  const [allJobs, setAllJobs] = useState([]);
+
+  const showMoreJobs = () => {
+    setVisibleJobs(allJobs.length); 
+  };
+  const showLessJobs = () => {
+    setVisibleJobs(3); 
+  };
+
+  const fetchJobData = async () => {
+    try {
+      const response = await axios.request(All_JOB_REQUEST);
+      const jobsData = response.data.jobs;
+
+      setAllJobs(jobsData); 
+      localStorage.setItem('jobData', JSON.stringify(jobsData)); 
+    } catch (error) {
+      console.error(error);
+    }
+
+  };
+
+  useEffect(() => {
+    const storedJobData = localStorage.getItem('jobData'); // Check for stored data
+    if (storedJobData) {
+      setAllJobs(JSON.parse(storedJobData)); 
+    } else {
+      
+      fetchJobData(); // Fetch from API if no data in localStorage
+    }
+  }, []); 
   return (
     <div>
-      <div className='card-container'>
-        <div className='cards'>
-          {huntingData?.map((jobs, index) => (
-            <SingleHuntingCard key={index} jobs={jobs} />
+      <div className="card-container">
+        <div className="cards">
+          {allJobs.slice(0, visibleJobs).map((job, index) => (
+            <SingleHuntingCard key={index} job={job} />
           ))}
         </div>
       </div>
-      <button className='btn_see_more'>See More</button>
+      {visibleJobs < allJobs.length && (
+        <button className="btn_see_more" onClick={showMoreJobs}>
+          Show More
+        </button>
+      )}
+      {visibleJobs > 3 && (
+        <button className="btn_see_more" onClick={showLessJobs}>
+          Show Less
+        </button>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default HuntingCards
+export default HuntingCards;
