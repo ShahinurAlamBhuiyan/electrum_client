@@ -19,23 +19,17 @@ const SingleHuntingCard = ({ job }) => {
   return (
     <div className='single_card' onClick={() => navigate(`/job-hunting/${id}`)}>
       <div className='transparent'>
-        <div className='transparent d-flex justify-center gap-4'>
-          <img className='transparent' src={image} />
+        <div className='company_'>
+          <img src={image} />
           <span>{company}</span>
         </div>
-        <h3 className='transparent job_title'>{title}</h3>
+        <h3 className='job_title'>{title}</h3>
       </div>
-      <div className='transparent flex_item'>
-        <img
-          className='transparent loc_img'
-          style={{ width: '7%', height: '2%' }}
-          src={locationLogo}
-        />
-        <p className='transparent'>{location}</p>
+      <div className='location_'>
+        <img className='loc_img' src={locationLogo} />
+        <span className=''>{location}</span>
       </div>
-      <div className='transparent flex_item job_type'>
-        <p className='transparent extra_info'>{employmentType}</p>
-      </div>
+      <p className='job_type'>{employmentType}</p>
       <div className='card_footer transparent d-flex justify-center items-center flex-column'>
         <p className='transparent'>
           Salary:&nbsp;

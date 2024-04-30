@@ -1,12 +1,6 @@
-/* .hunting_container{
-    background-image: url("https://i.ibb.co/G53FW47/ellips.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
-} */
-
 /* search bar */
 .search_container {
-  border: 1px solid #d7d8d7; /* Consider adjusting border color for better visibility */
+  border: 1px solid #d7d8d7;
   border-radius: 20px;
   display: flex;
   justify-content: space-around;
@@ -15,29 +9,27 @@
   padding-bottom: 15px;
   padding-top: 15px;
   margin-top: 50px;
-  background: rgb(15, 19, 17); /* Very dark base color */
+  background: rgb(15, 19, 17);
   background: linear-gradient(
     90deg,
     rgba(15, 19, 17, 1) 0%,
     rgba(38, 42, 39, 1) 22%,
     rgba(63, 69, 66, 1) 100%
-  ); /* Very dark gradient */
+  );
 }
 
 .job_input {
   padding: 20px;
-  /* border-radius: 10px; */
   padding: 5px;
   width: 90%;
-  background-color: transparent; /* Remove background for better contrast */
-  color: #fff; /* Set text color to white for better readability */
+  background-color: transparent;
+  color: #fff;
   border: none;
   border-bottom: 1px solid grey;
-
 }
-.job_input:focus{
-    border: none;
-    text-decoration: none;
+.job_input:focus {
+  border: none;
+  text-decoration: none;
 }
 
 .btn_job_search {
@@ -68,8 +60,6 @@
 
 /* cards */
 .card-container {
-  /* padding-top: 50px;
-    padding-bottom: 50px; */
   padding: 50px 15px;
 }
 .single_card {
@@ -81,12 +71,10 @@
   border-radius: 20px;
   width: 330px;
   height: 450px;
-  /* justify-content: center;
-    align-items: center; */
+  cursor: pointer;
 }
 .single_card:hover {
   box-shadow: 1px 5px 15px rgba(255, 255, 255, 0.409);
-  /* transition: box-shadow 0.2s ease; */
 }
 .cards {
   display: flex;
@@ -95,34 +83,60 @@
   align-items: center;
   justify-content: center;
 }
-.extra_info {
-  border: 1px solid rgb(255, 234, 208);
-  border-radius: 35px;
-  padding: 5px 8px;
-
-  /* margin: 0 10px; */
-  text-align: center;
-  margin-right: 10px;
-  font-size: 13px;
-}
-/* .btn_details{
-    border: 1px solid antiquewhite;
-    border-radius: 8px;
-    padding: 10px 20px;
-    background-color: #435544;
-
-    cursor: pointer;
-} */
 .transparent {
   background-color: transparent;
 }
-.flex_item {
-  display: flex;
-  padding-top: 15px;
-}
+
 .job_title {
+  background: transparent;
   padding: 20px 0;
 }
 .card_footer {
   justify-content: space-between;
+}
+
+.job_type {
+  background: transparent;
+
+  border: 1px solid rgb(255, 234, 208);
+  border-radius: 35px;
+  padding: 5px 8px;
+
+  text-align: center;
+  margin-right: 10px;
+  font-size: 13px;
+  width: 50%;
+}
+
+.loc_img {
+  height: 2%;
+  width: 7%;
+
+  background: transparent;
+}
+
+.location_ {
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+
+  padding-bottom: 10px;
+}
+
+.company_ {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.company_ img {
+  background: transparent;
+
+  width: 40px;
+  height: 40px;
 }

@@ -135,6 +135,7 @@
 
   flex-direction: column;
   margin-top: 20px;
+  
 }
 
 .single_loc{
@@ -181,7 +182,7 @@
 
   gap: 20px;
 
-  padding: 20px;
+  padding: 30px;
 
   background: rgb(15, 19, 17); /* Very dark base color */
   background: linear-gradient(
