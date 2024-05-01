@@ -1,5 +1,7 @@
-import { useParams } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 import './Style.css'
+import DocCard from './DocCard'
+
 const data = [
     {
       id: 1,
@@ -59,39 +61,16 @@ const data = [
     }
   ];
 
+const DocsContainer = () => {
+  return (
+    <div className='card-container'>
+      {data.map((item, index) => (
+        <DocCard key={index} item={item} />
+      ))}
 
-    const DocDetails = () => {
-        const { doc_id } = useParams();
-    
-        
-        const filteredData = data.find((item) => item.id === parseInt(doc_id, 10));
-        const {title, description, author, published, imageURL} = filteredData
-    
-        if(!filteredData) {
-            return <div>Document not found</div>;
-        }
-    
-        return (
-            <div>
-                <div className="card_details">
-                    <h2>{title}</h2>
-                </div>
-                <div className='img_style'>
-                    <div className='author_name'>
-                        <h6>{author}</h6>
-                        <p>{published}</p>
-                    </div>
-                </div>
-                <div className='arduino_img'>
-                    <img className='img_continer' src={imageURL} alt={title} />
-                    <p>{title}</p>
-                </div>
-                <div className='doc_details'>
-                    <h1>{title}</h1>
-                    <p style={{textAlign:'justify'}}>{description}</p>
-                </div>
-            </div>
-        );
-    }
-    
-    export default DocDetails;
+      <Button className='docs_btn'>See More</Button>
+    </div>
+  )
+}
+
+export default DocsContainer
