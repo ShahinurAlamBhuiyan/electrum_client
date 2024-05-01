@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom'
+import React, {useState} from 'react'
 import './ComponentDetails.css' // Import your CSS file
+// import { useState } from 'react'
 
 const componentsData = [
   {
@@ -109,8 +111,19 @@ const ComponentDetails = () => {
     return <div>Component not found</div> // If the component doesn't exist, show a fallback
   }
 
+  const [count, setCount] = useState(1);
+
+  const decreamentCount = () => {
+    if(count > 1){
+      setCount(count-1)
+    }
+  }
+
+  const increamentCount = () => {
+    setCount(count+1)
+  }
   return (
-    <div className='component-details__container'>
+    <div className='component-details-container'>
       <div className='component-details'>
         <div className='image-section'>
           <img
@@ -120,9 +133,21 @@ const ComponentDetails = () => {
           />
         </div>
         <div className='info-section'>
-          <h2 className='component-name'>{component.productName}</h2>
-          <p className='component-description'>{component.description}</p>
-          <p className='component-price'>Price: {component.price}</p>
+            <h1 className='component-name'>{component.productName}</h1>
+            <p className='transparent color-black'><span className='color-black'>Owner name: </span>Amit Mahmud Sabbir</p>
+            <p className='transparent color-black'><span className='color-red'>20 </span>items left</p>
+            {/* dynamic data is missing */}
+            <p className='component-price color-black'>Price: <span className='color-red' style={{fontSize : "30px"}}>{component.price}</span></p>
+            <p className='component-description color-black'>{component.description}</p>
+            <div className="buy-now transparent">
+              <p className='transparent color-black'>Quantity</p>
+              <div className='transparent' style={{ display: 'flex', alignItems: 'center' }}>
+              <button onClick={decreamentCount}>-</button>
+              <span className='transparent color-black' style={{ margin: '0 20px', fontSize: '20px' }}>{count}</span>
+              <button onClick={increamentCount}>+</button>
+              </div>
+              <button className='btn-buy-now color-black'>Buy Now</button>
+            </div>
         </div>
       </div>
     </div>

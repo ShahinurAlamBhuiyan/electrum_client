@@ -20,6 +20,7 @@
   /* size: 100%; */
 }
 
+<<<<<<< HEAD
 .job-details {
   text-align: center;
 }
@@ -135,6 +136,106 @@
 
   flex-direction: column;
   margin-top: 20px;
+=======
+  .job-details-page {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .company-logo {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+ 
+  
+  .details {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+  }
+  
+  .description {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .not-found {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    color: #900;
+  }
+  
+  .job-details-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .header {
+    text-align: center;
+    position: relative;
+  }
+  
+  .company-logo {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .apply-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .column {
+    width: 30%;
+  }
+  
+  .video-introduction {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .related-jobs {
+    margin-top: 40px;
+  }
+  
+  .related-job-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .related-job-card img {
+    width: 50px;
+    margin-right: 10px;
+  }
+>>>>>>> sabbir
   
 }
 
