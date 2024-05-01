@@ -61,6 +61,7 @@ const huntingData = [
 ]
 
 const HuntingCards = () => {
+  
   const [visibleJobs, setVisibleJobs] = useState(3);
 
   const showMoreJobs = () => {

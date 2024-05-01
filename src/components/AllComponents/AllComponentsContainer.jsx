@@ -111,7 +111,7 @@ const AllComponentsContainer = ({ activeNew, activeOld, searchTerm }) => {
           .includes(searchTerm.toLowerCase()) ||
         component.description.toLowerCase().includes(searchTerm.toLowerCase())
     )
-
+    
   const filteredOldComponents = componentsData
     .filter(component => component.type === 'old')
     .filter(
