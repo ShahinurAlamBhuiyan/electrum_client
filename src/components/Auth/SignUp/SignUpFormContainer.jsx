@@ -7,12 +7,16 @@ import {
   doSignInWithGoogle
 } from '../firebase/auth'
 
+import axios from 'axios'
+
 import googleIcon from '../../../assets/Social_icons/googleIcon.png'
 import { useAuth } from '../contexts/authContext'
 
 const SignUpFormContainer = () => {
   const { userLoggedIn } = useAuth()
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [role] = useState('user')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [isSigningUp, setIsSigningUp] = useState(false)
@@ -29,6 +33,7 @@ const SignUpFormContainer = () => {
       try {
         await doCreateUserWithEmailAndPassword(email, password)
         alert('your account created successfully!')
+        storeUserToDB(name, email, role)
       } catch (error) {
         setErrorMessage('Sign-up failed. Please try again.')
         setIsSigningUp(false)
@@ -36,15 +41,35 @@ const SignUpFormContainer = () => {
     }
   }
 
+  // POST REQUEST....
+  const storeUserToDB = async (name, email, role) => {
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_SERVER}/signup`, {
+        name,
+        email,
+        role
+      })
+      console.log(response.data.message)
+    } catch (error) {
+      console.error('Sign-up failed:', error.response.data.error)
+      setErrorMessage('Sign-up failed. Please try again.')
+      setIsSigningUp(false)
+    }
+  }
+
   const onGoogleSignUp = e => {
     e.preventDefault()
     if (!isSigningUp) {
       setIsSigningUp(true)
-      doSignInWithGoogle().catch(err => {
-        console.log(err)
-        setIsSigningUp(false)
-        setErrorMessage('Google sign-up failed. Please try again.')
-      })
+      doSignInWithGoogle()
+        .then(res => {
+          storeUserToDB(res.user.displayName, res.user.email, role)
+        })
+        .catch(err => {
+          console.log(err)
+          setIsSigningUp(false)
+          setErrorMessage('Google sign-up failed. Please try again.')
+        })
     }
   }
 
@@ -54,6 +79,17 @@ const SignUpFormContainer = () => {
       <div className='signup-form-header'>Create Your Account</div>
       <div className='signup-form-wrapper'>
         <form onSubmit={onSubmit}>
+          <>
+            <label className='signup-form-label'>Name</label>
+            <input
+              type='name'
+              autoComplete='name'
+              required
+              value={name}
+              onChange={e => setName(e.target.value)}
+              className='signup-form-input'
+            />
+          </>
           <>
             <label className='signup-form-label'>Email</label>
             <input

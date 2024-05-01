@@ -8,10 +8,13 @@ import AllComponents from '../pages/AllComponents/AllComponents'
 import Feed from '../pages/Feed/Feed'
 import Courses from '../pages/Courses/Courses'
 import Hunting from '../pages/Hunting/Hunting'
+import Competition from '../pages/Competition/Competition'
 import SignIn from '../pages/Auth/SignIn/SignIn'
 import SignUp from '../pages/Auth/SignUp/SignUp'
 import AuthProvider from '../components/Auth/contexts/authContext'
-import ComponentDetails from '../pages/AllComponents/ComponentDetails'
+import ComponentDetails from '../pages/AllComponents/ComponentDetails/ComponentDetails'
+import CourseDetails from '../pages/Courses/CourseDetails'
+import JobDetails from '../pages/Hunting/JobDetails/JobDetails'
 import DocDetails from '../pages/Docs/DocDetails'
 
 // Define routes inside the main layout
@@ -53,8 +56,20 @@ const mainRoutes = [
     element: <Courses />
   },
   {
+    path: 'courses/:course_id',
+    element: <CourseDetails />
+  },
+  {
     path: 'job-hunting',
     element: <Hunting />
+  },
+  {
+    path: 'competition',
+    element: <Competition />
+  },
+  {
+    path: 'job-hunting/:job_id',
+    element: <JobDetails />
   },
   {
     path: 'sign-in',
@@ -81,3 +96,4 @@ const router = createBrowserRouter([
 
 // Export the router as a component for rendering
 export default router
+

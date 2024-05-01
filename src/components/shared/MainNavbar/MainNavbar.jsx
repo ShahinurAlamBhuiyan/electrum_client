@@ -45,6 +45,9 @@ const MainNavbar = () => {
             <Nav.Link href='/job-hunting' className='nav-menu'>
               Hunting
             </Nav.Link>
+            <Nav.Link href='/competition' className='nav-menu'>
+              Competition
+            </Nav.Link>
 
             {/* <NavDropdown
               className='navbar-container'
