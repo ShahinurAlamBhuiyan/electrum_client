@@ -1,5 +1,6 @@
 import { Button, Card } from 'react-bootstrap'
 import './Style.css'
+import { useState } from 'react'
 const data = [
   {
     title: 'Arduino UNO',
@@ -51,10 +52,21 @@ const data = [
 ]
 
 const DocsCard = () => {
+
+  const [visibleDocs, setVisibleDocs] = useState(4)
+
+  const showLessDocs = () => {
+    setVisibleDocs(4)
+  }
+
+  const showMoreDocs = () => {
+    setVisibleDocs(data.length)
+  }
+
   return (
     <div>
         <div className='card-container'>
-        {data.map((item, index) => (
+        {data.slice(0,visibleDocs).map((item, index) => (
         <Card className='single-card' key={index}>
           <div
             style={{
@@ -92,7 +104,12 @@ const DocsCard = () => {
     </div>
    
 {/* <div> */}
-<Button className='docs_btn'>See More</Button>
+      {visibleDocs < data.length && 
+        <Button className='docs_btn' onClick={showMoreDocs}>See More</Button>
+      }
+      {visibleDocs > 4 && 
+        <Button className='docs_btn' onClick={showLessDocs}>See Less</Button>
+      }
 
   {/* </div>    */}
   </div>
