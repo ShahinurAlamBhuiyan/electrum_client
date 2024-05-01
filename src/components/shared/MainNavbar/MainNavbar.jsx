@@ -3,6 +3,7 @@ import './MainNavbar.css'
 
 import { useAuth } from '../../Auth/contexts/authContext'
 import { doSignOut } from '../../Auth/firebase/auth'
+import logoutIcon from '../../../assets/logout.png'
 const MainNavbar = () => {
   const { currentUser } = useAuth()
 
@@ -48,26 +49,31 @@ const MainNavbar = () => {
             <Nav.Link href='/competition' className='nav-menu'>
               Competition
             </Nav.Link>
-
-            {/* <NavDropdown
-              className='navbar-container'
-              title='Components'
-              id='collapsible-nav-dropdown'
-              href='/docs'
-            >
-              <NavDropdown.Item className='nav-item' href='#action/3.1'>
-                new components
-              </NavDropdown.Item>
-              <NavDropdown.Item className='nav-item' href='#action/3.2'>
-                pre-owned components
-              </NavDropdown.Item>
-            </NavDropdown> */}
           </Nav>
           <Nav className='navbar-container'>
             {currentUser?.email ? (
-              <Nav.Link className='nav-menu'>
-                <Button onClick={() => doSignOut()}>Sign Out</Button>
-              </Nav.Link>
+              <div
+                style={{
+                  display: 'flex',
+                  background: 'transparent',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <Nav.Link href='/dashboard' className='nav-menu'>
+                  <Button>Dashboard</Button>
+                </Nav.Link>
+                <img
+                  onClick={() => doSignOut()}
+                  style={{
+                    width: '30px',
+                    height: '30px',
+                    background: 'transparent',
+                    cursor: 'pointer',
+                  }}
+                  src={logoutIcon}
+                />
+              </div>
             ) : (
               <Nav.Link href='/sign-in' className='nav-menu'>
                 <Button>Sign In</Button>
