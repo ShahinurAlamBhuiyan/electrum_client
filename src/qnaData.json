@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "userName": "Amit Mahmud Sabbir",
+        "userPicUrl": "https://i.ibb.co/ZW3YpmC/Select-an-emoji-avatar.png",
+        "question": "What is the difference between a capacitor and an inductor?",
+        "createdDate": "2024-04-30"
+    },
+    {
+        "id": "2",
+        "userName": "Shahinur Alam Bhuiyan",
+        "userPicUrl": "https://i.ibb.co/3NRhhyJ/Select-an-emoji-avatar-1.png",
+        "question": "How do I calculate the resistor value for an LED?",
+        "createdDate": "2024-04-29"
+    },
+    {
+        "id": "3",
+        "userName": "Nafis Hossain",
+        "userPicUrl": "https://i.ibb.co/ZW3YpmC/Select-an-emoji-avatar.png",
+        "question": "What are the typical applications of a MOSFET?",
+        "createdDate": "2024-04-28"
+    },
+    {
+        "id": "4",
+        "userName": "Tonmay",
+        "userPicUrl": "https://i.ibb.co/3r11Z20/Rectangle-2.png",
+        "question": "Can you explain the function of a diode in a circuit?",
+        "createdDate": "2024-04-27"
+    },
+    {
+        "id": "5",
+        "userName": "Fahad",
+        "userPicUrl": "https://i.ibb.co/3NRhhyJ/Select-an-emoji-avatar-1.png",
+        "question": "What are the advantages of using a PCB over a breadboard?",
+        "createdDate": "2024-04-26"
+    },
+    {
+        "id": "6",
+        "userName": "Amit Mahmud Sabbir",
+        "userPicUrl": "https://i.ibb.co/ZW3YpmC/Select-an-emoji-avatar.png",
+        "question": "How does temperature affect the performance of semiconductors?",
+        "createdDate": "2024-04-25"
+    }
+]
