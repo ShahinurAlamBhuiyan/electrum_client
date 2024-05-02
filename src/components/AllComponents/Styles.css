@@ -34,6 +34,7 @@
     border: 1px solid gray;
     border-radius: 8px;
     padding: 10px;
+    outline: none;
 }
 .input_comp:hover{
     border: 1px solid seashell;
