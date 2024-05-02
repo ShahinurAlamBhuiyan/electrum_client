@@ -19,6 +19,7 @@ import DocDetails from '../pages/Docs/DocDetails'
 import Dashboard from '../Layout/Dashboard'
 import ViewProfile from '../pages/Dashboard/ViewProfile'
 import YourOrder from '../pages/Dashboard/YourOrder'
+import PrivateRoutes from '../Layout/PrivateRoutes'
 
 // Define routes inside the main layout
 const mainRoutes = [
@@ -87,11 +88,20 @@ const mainRoutes = [
 const dashboardRoutes = [
   {
     path: 'profile',
-    element: <ViewProfile />
+    element: (
+      <PrivateRoutes>
+        {' '}
+        <ViewProfile />
+      </PrivateRoutes>
+    )
   },
   {
     path: 'order',
-    element: <YourOrder />
+    element: (
+      <PrivateRoutes>
+        <YourOrder />
+      </PrivateRoutes>
+    )
   }
 ]
 
@@ -108,10 +118,15 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <Dashboard />,
+    element: (
+      <AuthProvider>
+        <PrivateRoutes>
+          <Dashboard />
+        </PrivateRoutes>
+      </AuthProvider>
+    ),
     children: dashboardRoutes
   }
 ])
 
-// Export the router as a component for rendering
 export default router
