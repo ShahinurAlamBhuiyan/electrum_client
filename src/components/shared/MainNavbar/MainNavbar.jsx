@@ -61,7 +61,7 @@ const MainNavbar = () => {
                 }}
               >
                 <Nav.Link href='/dashboard' className='nav-menu'>
-                  <Button>Dashboard</Button>
+                  <Button>My Account</Button>
                 </Nav.Link>
                 <img
                   onClick={() => doSignOut()}
