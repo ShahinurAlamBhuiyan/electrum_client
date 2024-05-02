@@ -17,6 +17,8 @@ import CourseDetails from '../pages/Courses/CourseDetails'
 import JobDetails from '../pages/Hunting/JobDetails/JobDetails'
 import DocDetails from '../pages/Docs/DocDetails'
 import Dashboard from '../Layout/Dashboard'
+import ViewProfile from '../pages/Dashboard/ViewProfile'
+import YourOrder from '../pages/Dashboard/YourOrder'
 
 // Define routes inside the main layout
 const mainRoutes = [
@@ -83,18 +85,14 @@ const mainRoutes = [
 ]
 
 const dashboardRoutes = [
-  // {
-  //   path: 'dashboard',
-  //   element: <h1>Welcome to Electrum Dashboard</h1>
-  // }
-  // {
-  //   path: 'users',
-  //   element: (
-  //     <PrivateRoute path='/users'>
-  //       <DUsersPage />
-  //     </PrivateRoute>
-  //   )
-  // },
+  {
+    path: 'profile',
+    element: <ViewProfile />
+  },
+  {
+    path: 'order',
+    element: <YourOrder />
+  }
 ]
 
 // Create the main router with AuthProvider
