@@ -21,14 +21,14 @@ const AllComponentsHeader = ({
     <div className='comp_header'>
       <button
         style={{ backgroundColor: activeNew ? '#64B357' : '#202E25' }}
-        className='btn_new_comp'
+        className='btn_new_comp text-white'
         onClick={handleNewComponents}
       >
         New Components
       </button>
       <button
         style={{ backgroundColor: !activeNew ? '#64B357' : '#202E25' }}
-        className='btn_pre_comp'
+        className='btn_pre_comp text-white'
         onClick={handlePreOwnedComponents}
       >
         Pre-Owned Components

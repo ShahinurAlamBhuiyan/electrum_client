@@ -4,47 +4,50 @@ import './Hunting.css'
 import locationLogo from '../../assets/location-logo.png'
 import { useNavigate } from 'react-router-dom'
 
-const SingleHuntingCard = ({ jobs }) => {
+const SingleHuntingCard = ({ job }) => {
   const navigate = useNavigate()
-  const { companyAddress, companyLogo, jobTitle, salary, jobType, id } = jobs
+  const {
+    id,
+    title,
+    image,
+    location,
+    employmentType,
+    salaryRange,
+    company,
+    datePosted
+  } = job
   return (
     <div className='single_card' onClick={() => navigate(`/job-hunting/${id}`)}>
       <div className='transparent'>
-        <img className='transparent' src={companyLogo} />
-        <h3 className='transparent job_title'>{jobTitle}</h3>
+        <div className='company_'>
+          <img src={image} />
+          <span>{company}</span>
+        </div>
+        <h3 className='job_title'>{title}</h3>
       </div>
-      <div className='transparent flex_item'>
-        <img
-          className='transparent loc_img'
-          style={{ width: '7%', height: '2%' }}
-          src={locationLogo}
-        />
-        <p className='transparent'>{companyAddress}</p>
+      <div className='location_'>
+        <img className='loc_img' src={locationLogo} />
+        <span className=''>{location}</span>
       </div>
-      <div className='transparent flex_item job_type'>
-        {jobType.map((type, index) => (
-          <div className='transparent' key={index}>
-            <p className='transparent extra_info'>{type}</p>
-          </div>
-        ))}
-      </div>
-      <div className='card_footer transparent flex_item'>
+      <p className='job_type'>{employmentType}</p>
+      <div className='card_footer transparent d-flex justify-center items-center flex-column'>
         <p className='transparent'>
+          Salary:&nbsp;
           <span
             className='transparent'
-            style={{ color: '#81FF9D', fontSize: '30px' }}
+            style={{ color: '#81FF9D', fontSize: '15px' }}
           >
-            {salary}
+            $ {salaryRange ? salaryRange : 'Negotiable'}
           </span>
-          /month
         </p>
+        <p className='transparent'>Published: {datePosted} </p>
       </div>
     </div>
   )
 }
 
 SingleHuntingCard.propTypes = {
-  jobs: PropTypes.func.isRequired
+  job: PropTypes.func.isRequired
 }
 
 export default SingleHuntingCard

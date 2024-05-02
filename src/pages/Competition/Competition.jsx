@@ -51,12 +51,12 @@ const Competition = () => {
           }
           {
             visibleCards < competitionData.length &&(
-              <button className='btn_see_more' onClick={() =>showMoreCards()}>Show More</button>
+              <button className='btn_see_more text-white' onClick={() =>showMoreCards()}>Show More</button>
             )
           }
           {
             visibleCards > 3 &&(
-              <button className='btn_see_more' onClick={()=>showLessCards()}>Show Less</button>
+              <button className='btn_see_more text-white' onClick={()=>showLessCards()}>Show Less</button>
             )
           }
           

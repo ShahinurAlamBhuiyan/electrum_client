@@ -26,14 +26,14 @@ export default function AllComponentsHeader({
       <button
         onClick={handleUpcoming}
         style={{ backgroundColor: activeUpcoming ? '#64B357' : '#202E25', marginRight: '30px' }}
-        className="btn_new_comp"
+        className="btn_new_comp text-white"
       >
         Upcoming Events
       </button>
       <button
         onClick={handlePrevious}
         style={{ backgroundColor: activePrevious ? '#64B357' : '#202E25' }}
-        className="btn_pre_comp"
+        className="btn_pre_comp text-white"
       >
         Previous Events
       </button>

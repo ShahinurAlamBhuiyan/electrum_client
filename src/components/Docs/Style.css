@@ -49,15 +49,14 @@
 .card_date {
   font-size: 12px !important;
 }
-.docs_btn{
+.docs_btn {
   display: flex;
-    justify-content: center;
-    align-items: center ;
-    border: 1px solid #D7D8D7 !important;
-    border-radius: 10px;
-    
-    background-color: #475445 !important;
-    font-size: 20px;
-    margin-left:  50%;
-    margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #d7d8d7 !important;
+  border-radius: 10px;
+
+  background-color: #475445 !important;
+  font-size: 20px;
+  margin-bottom: 50px;
 }

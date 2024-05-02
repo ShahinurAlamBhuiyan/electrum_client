@@ -15,6 +15,11 @@ import AuthProvider from '../components/Auth/contexts/authContext'
 import ComponentDetails from '../pages/AllComponents/ComponentDetails/ComponentDetails'
 import CourseDetails from '../pages/Courses/CourseDetails'
 import JobDetails from '../pages/Hunting/JobDetails/JobDetails'
+import DocDetails from '../pages/Docs/DocDetails'
+import Dashboard from '../Layout/Dashboard'
+import ViewProfile from '../pages/Dashboard/ViewProfile'
+import YourOrder from '../pages/Dashboard/YourOrder'
+import PrivateRoutes from '../Layout/PrivateRoutes'
 
 // Define routes inside the main layout
 const mainRoutes = [
@@ -29,6 +34,10 @@ const mainRoutes = [
   {
     path: 'docs',
     element: <Docs />
+  },
+  {
+    path: 'doc/:doc_id',
+    element: <DocDetails />
   },
   {
     path: 'qna',
@@ -76,6 +85,26 @@ const mainRoutes = [
   }
 ]
 
+const dashboardRoutes = [
+  {
+    path: 'profile',
+    element: (
+      <PrivateRoutes>
+        {' '}
+        <ViewProfile />
+      </PrivateRoutes>
+    )
+  },
+  {
+    path: 'order',
+    element: (
+      <PrivateRoutes>
+        <YourOrder />
+      </PrivateRoutes>
+    )
+  }
+]
+
 // Create the main router with AuthProvider
 const router = createBrowserRouter([
   {
@@ -86,9 +115,18 @@ const router = createBrowserRouter([
       </AuthProvider>
     ),
     children: mainRoutes
+  },
+  {
+    path: '/dashboard',
+    element: (
+      <AuthProvider>
+        <PrivateRoutes>
+          <Dashboard />
+        </PrivateRoutes>
+      </AuthProvider>
+    ),
+    children: dashboardRoutes
   }
 ])
 
-// Export the router as a component for rendering
 export default router
-

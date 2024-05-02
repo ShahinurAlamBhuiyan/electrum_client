@@ -11,11 +11,11 @@ const Main = () => {
   const shouldShowNavAndFooter = !hiddenPaths.includes(location.pathname);
 
   return (
-    <>
+    <div className='main_layout'>
       {shouldShowNavAndFooter && <MainNavbar />}
       <Outlet />
       {shouldShowNavAndFooter && <Footer />}
-    </>
+    </div>
   );
 };
 

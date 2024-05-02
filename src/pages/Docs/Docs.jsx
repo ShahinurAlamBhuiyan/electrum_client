@@ -1,11 +1,7 @@
-import DocsCard from "../../components/Docs/DocsCard"
+import DocsContainer from '../../components/Docs/DocsContainer'
 
 const Docs = () => {
-  return (
-    <div>
-      <DocsCard />
-    </div>
-  )
+  return <DocsContainer />
 }
 
 export default Docs
