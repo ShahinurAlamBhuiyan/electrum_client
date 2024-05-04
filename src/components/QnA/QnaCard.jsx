@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 export default function QnaCard({item}) {
-  const { userName, userPicUrl, question, createdDate} = item
+  const { userName, userPicUrl, question, keywords, createdDate} = item
   return (
     <div className='qna-card'>
       <div className="card-header">
@@ -14,6 +14,11 @@ export default function QnaCard({item}) {
       <div className="card-footer">
         <h3 className='question'>{question}</h3>
         <button className='btn-answer'>Answer</button>
+      </div>
+      <div className="keywords">
+        {keywords.map((keyword, index) => (
+          <p className='keyword' key={index}>{keyword}</p>
+        ))}
       </div>
     </div>
   )

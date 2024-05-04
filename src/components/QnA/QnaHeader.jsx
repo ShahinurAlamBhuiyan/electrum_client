@@ -9,11 +9,14 @@ export default function QnaHeader() {
           <input
           className='input_comp search_qna'
           type='text'
-          placeholder='Search your questions here...'
+          placeholder='Search your questions here.....'
           // value={searchTerm}
           // onChange={e => setSearchTerm(e.target.value)}
           />
         {/* </div> */}
+
     </div>
   )
 }
+
+

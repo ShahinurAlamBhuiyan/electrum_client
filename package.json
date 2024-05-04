@@ -20,6 +20,7 @@
     "react-bootstrap": "^2.10.2",
     "react-card-slider-component": "^1.0.9",
     "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.22.3",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1"
