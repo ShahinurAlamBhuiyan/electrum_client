@@ -9,7 +9,8 @@ const SideMenu = () => {
         Electrum
       </h1>
       <a href='/dashboard/profile'>profile</a> <br />
-      <a href='/dashboard/order'>order</a>
+      <a href='/dashboard/order'>order</a> <br />
+      <a href='/dashboard/add-component'>add component</a> <br />
     </div>
   )
 }

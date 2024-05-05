@@ -27,6 +27,11 @@
   flex: 3;
   background-color: rgb(4, 22, 4);
   height: 100vh;
+
+  color: white;
+  padding: 50px;
+
+  overflow-y: scroll;
 }
 
 
