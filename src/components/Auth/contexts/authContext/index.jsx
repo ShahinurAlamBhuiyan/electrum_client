@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { auth } from '../../firebase/firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 import axios from 'axios'
+import loadingGif from '../../../../assets/loading.gif'
 
 const AuthContext = createContext()
 
@@ -74,7 +75,15 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={value}>
-      {!loading ? children : <p>Loading...</p>}
+      {!loading ? (
+        children
+      ) : (
+        <img
+          style={{ width: '100vw', height: '100vh' }}
+          src={loadingGif}
+          alt='loading...'
+        />
+      )}
     </AuthContext.Provider>
   )
 }
