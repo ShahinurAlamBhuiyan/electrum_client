@@ -42,59 +42,10 @@ const AddComponents = () => {
                 />
               </div>
             ))}
-        </form>
-
-        {/* <> */}
-        {/* <label className='addComponent-form-label'>Name</label>
-            <input
-              type='name'
-              autoComplete='name'
-              required
-              // value={name}
-              // onChange={e => setName(e.target.value)}
-              className='addComponent-form-input'
-            />
-          </>
-          <>
-            <label className='addComponent-form-label'>Email</label>
-            <input
-              type='email'
-              autoComplete='email'
-              required
-              // value={email}
-              // onChange={e => setEmail(e.target.value)}
-              className='addComponent-form-input'
-            />
-          </>
-
-          <>
-            <label className='addComponent-form-label'>Password</label>
-            <input
-              type='password'
-              autoComplete='new-password'
-              required
-              // value={password}
-              // onChange={e => setPassword(e.target.value)}
-              className='addComponent-form-input'
-            />
-          </>
-
-          <>
-            <label className='addComponent-form-label'>Confirm Password</label>
-            <input
-              type='password'
-              required
-              // value={confirmPassword}
-              // onChange={e => setConfirmPassword(e.target.value)}
-              className='addComponent-form-input'
-            />
-          </> */}
-        {/* {errorMessage && <div className='error-message'>{errorMessage}</div>} */}
-
-        {/* <button className='addComponent-form-button' type='submit'>
+          <button className='addComponent-form-button' type='submit'>
             Add
-          </button> */}
-        {/* </form> */}
+          </button>
+        </form>
       </div>
     </div>
   )
