@@ -46,15 +46,36 @@ const MyComponents = () => {
   return (
     <div>
       <h2>My Components</h2>
-      <ul>
-        {components.map((component, index) => (
-          <li key={index}>
-            {component.name}: {component.description}
-          </li>
-        ))}
-      </ul>
+      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <thead>
+          <tr style={{ backgroundColor: '#83c677', textAlign: 'left' }}>
+            <th style={{ border: '1px solid #ddd', padding: '8px', color: 'black' }}>Name</th>
+            <th style={{ border: '1px solid #ddd', padding: '8px', color: 'black' }}>Description</th>
+            <th style={{ border: '1px solid #ddd', padding: '8px', color: 'black' }}>Buying Price</th>
+            <th style={{ border: '1px solid #ddd', padding: '8px', color: 'black' }}>Selling Price</th>
+            <th style={{ border: '1px solid #ddd', padding: '8px', color: 'black' }}>Quantity</th>
+            <th style={{ border: '1px solid #ddd', padding: '8px', color: 'black' }}>Type</th>
+            <th style={{ border: '1px solid #ddd', padding: '8px', color: 'black' }}>Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          {components.map((component, index) => (
+            <tr key={index}>
+              <td style={{ border: '1px solid #ddd', padding: '8px' }}>{component.name}</td>
+              <td style={{ border: '1px solid #ddd', padding: '8px' }}>{component.description}</td>
+              <td style={{ border: '1px solid #ddd', padding: '8px' }}>{component.buying_price}</td>
+              <td style={{ border: '1px solid #ddd', padding: '8px' }}>{component.selling_price}</td>
+              <td style={{ border: '1px solid #ddd', padding: '8px' }}>{component.quantity}</td>
+              <td style={{ border: '1px solid #ddd', padding: '8px' }}>{component.type}</td>
+              <td style={{ border: '1px solid #ddd', padding: '8px' }}>
+                <img src={component.img_URL} alt={component.name} style={{ width: '50px', height: 'auto' }} />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-  )
+  );
 }
 
 export default MyComponents
