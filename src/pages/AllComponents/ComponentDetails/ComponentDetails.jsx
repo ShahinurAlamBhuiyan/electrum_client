@@ -1,153 +1,108 @@
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import React, {useState} from 'react'
-import './ComponentDetails.css' // Import your CSS file
-// import { useState } from 'react'
-
-const componentsData = [
-  {
-    id: 1,
-    productImgURL: 'https://i.ibb.co/bF925Wj/arduino.webp',
-    productName: 'Arduino Micro Controller',
-    description: 'A popular single-board micro controller for beginners.',
-    price: '$21',
-    type: 'new'
-  },
-  {
-    id: 2,
-    productImgURL: 'https://i.ibb.co/QX9NsH7/i2c.png',
-    productName: 'I2C Display',
-    description:
-      'A Liquid Crystal Display (LCD) using I2C communication for easy connection with just a few wires.',
-    price: '$9.5',
-    type: 'new'
-  },
-  {
-    id: 3,
-    productImgURL: 'https://i.ibb.co/mBNC9Df/esp32.png',
-    productName: 'ESP32 Micro Controller',
-    description:
-      'A powerful micro controller with Wi-Fi and Bluetooth connectivity.',
-    price: '$13.5',
-    type: 'new'
-  },
-  {
-    id: 4,
-    productImgURL: 'https://i.ibb.co/bF925Wj/arduino.webp',
-    productName: 'Arduino Micro Controller',
-    description: 'A popular single-board micro controller for beginners.',
-    price: '$21',
-    type: 'new'
-  },
-  {
-    id: 5,
-    productImgURL: 'https://i.ibb.co/QX9NsH7/i2c.png',
-    productName: 'I2C Display',
-    description:
-      'A Liquid Crystal Display (LCD) using I2C communication for easy connection with just a few wires.',
-    price: '$9.5',
-    type: 'new'
-  },
-  {
-    id: 6,
-    productImgURL: 'https://i.ibb.co/mBNC9Df/esp32.png',
-    productName: 'ESP32 Micro Controller',
-    description:
-      'A powerful micro controller with Wi-Fi and Bluetooth connectivity.',
-    price: '$13.5',
-    type: 'new'
-  },
-  {
-    id: 7,
-    productImgURL: 'https://i.ibb.co/bF925Wj/arduino.webp',
-    productName: 'Arduino Micro Controller',
-    description: 'A popular single-board micro controller for beginners.',
-    price: '$21',
-    type: 'old'
-  },
-  {
-    id: 8,
-    productImgURL: 'https://i.ibb.co/QX9NsH7/i2c.png',
-    productName: 'I2C Display',
-    description:
-      'A Liquid Crystal Display (LCD) using I2C communication for easy connection with just a few wires.',
-    price: '$9.5',
-    type: 'old'
-  },
-  {
-    id: 10,
-    productImgURL: 'https://i.ibb.co/mBNC9Df/esp32.png',
-    productName: 'ESP32 Micro Controller',
-    description:
-      'A powerful micro controller with Wi-Fi and Bluetooth connectivity.',
-    price: '$13.5',
-    type: 'old'
-  },
-  {
-    id: 11,
-    productImgURL: 'https://i.ibb.co/bF925Wj/arduino.webp',
-    productName: 'Arduino Micro Controller',
-    description: 'A popular single-board micro controller for beginners.',
-    price: '$21',
-    type: 'old'
-  },
-  {
-    id: 12,
-    productImgURL: 'https://i.ibb.co/QX9NsH7/i2c.png',
-    productName: 'I2C Display',
-    description:
-      'A Liquid Crystal Display (LCD) using I2C communication for easy connection with just a few wires.',
-    price: '$9.5',
-    type: 'old'
-  }
-]
+import axios from 'axios'
+import './ComponentDetails.css'
 
 const ComponentDetails = () => {
   const { component_id } = useParams()
-  const component = componentsData.find(
-    comp => comp.id === parseInt(component_id)
-  )
+  const [component, setComponent] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [count, setCount] = useState(1)
+  const [owner, setOwner] = useState(null)
 
-  if (!component) {
-    return <div>Component not found</div> // If the component doesn't exist, show a fallback
+  useEffect(() => {
+    const fetchComponent = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_SERVER}/component/${component_id}`
+        )
+        const fetchedComponent = response.data
+        setComponent(fetchedComponent)
+        if (fetchedComponent.owner_id) {
+          const ownerResponse = await axios.get(
+            `${import.meta.env.VITE_SERVER}/user/${fetchedComponent.owner_id}`
+          )
+          setOwner(ownerResponse.data) // Store the fetched owner's information
+        }
+      } catch (err) {
+        console.error('Error fetching component details:', err)
+        setError('Failed to fetch component details.') // Set an error message
+      } finally {
+        setLoading(false) // Stop loading once complete
+      }
+    }
+
+    fetchComponent() // Fetch the component when the component mounts
+  }, [component_id]) // Dependency on component_id, re-fetch if it changes
+
+  if (loading) {
+    return <div>Loading...</div>
   }
 
-  const [count, setCount] = useState(1);
+  if (error) {
+    return <div>Error: {error}</div>
+  }
 
-  const decreamentCount = () => {
-    if(count > 1){
-      setCount(count-1)
+  if (!component) {
+    return <div>Component not found</div>
+  }
+
+  const decrementCount = () => {
+    if (count > 1) {
+      setCount(count - 1)
     }
   }
 
-  const increamentCount = () => {
-    setCount(count+1)
+  const incrementCount = () => {
+    setCount(count + 1)
   }
+
   return (
     <div className='component-details-container'>
       <div className='component-details'>
         <div className='image-section'>
           <img
-            src={component.productImgURL}
-            alt={component.productName}
+            src={component.img_URL}
+            alt={component.name}
             className='component-image'
           />
         </div>
         <div className='info-section'>
-            <h1 className='component-name'>{component.productName}</h1>
-            <p className='transparent color-black'><span className='color-black'>Owner name: </span>Amit Mahmud Sabbir</p>
-            <p className='transparent color-black'><span className='color-red'>20 </span>items left</p>
-            {/* dynamic data is missing */}
-            <p className='component-price color-black'>Price: <span className='color-red' style={{fontSize : "30px"}}>{component.price}</span></p>
-            <p className='component-description color-black'>{component.description}</p>
-            <div className="buy-now transparent">
-              <p className='transparent color-black'>Quantity</p>
-              <div className='transparent' style={{ display: 'flex', alignItems: 'center' }}>
-              <button onClick={decreamentCount}>-</button>
-              <span className='transparent color-black' style={{ margin: '0 20px', fontSize: '20px' }}>{count}</span>
-              <button onClick={increamentCount}>+</button>
-              </div>
-              <button className='btn-buy-now color-black'>Buy Now</button>
+          <h1 className='component-name'>{component.name}</h1>
+          <p className='transparent color-black'>
+            <span className='color-black'>Owner name: </span>
+            {owner.name || 'Unknown'}
+          </p>
+          <p className='transparent color-black'>
+            <span className='color-red'>{component.quantity}</span> items left
+          </p>
+          <p className='component-price color-black'>
+            Price: ${component.selling_price}
+            <span className='color-red' style={{ fontSize: '30px' }}>
+              ${component.buying_price}
+            </span>
+          </p>
+          <p className='component-description color-black'>
+            {component.description}
+          </p>
+          <div className='buy-now transparent'>
+            <p className='transparent color-black'>Quantity</p>
+            <div
+              className='transparent'
+              style={{ display: 'flex', alignItems: 'center' }}
+            >
+              <button onClick={decrementCount}>-</button>
+              <span
+                className='transparent color-black'
+                style={{ margin: '0 20px', fontSize: '20px' }}
+              >
+                {count}
+              </span>
+              <button onClick={incrementCount}>+</button>
             </div>
+            <button className='btn-buy-now color-black'>Buy Now</button>
+          </div>
         </div>
       </div>
     </div>
