@@ -1,80 +1,64 @@
-import PropTypes from 'prop-types'
-import { createContext, useContext, useEffect, useState } from 'react'
-// import { auth } from '../../firebase/firebase'
-// import { onAuthStateChanged } from 'firebase/auth'
-import loadingGif from '../../../../assets/loading.gif'
+import PropTypes from 'prop-types';
+import { createContext, useContext, useEffect, useState } from 'react';
+import loadingGif from '../../../../assets/loading.gif';
+import { useLocation } from 'react-router-dom';
 
-const AuthContext = createContext()
+const AuthContext = createContext();
 
-export function useAuth () {
-  return useContext(AuthContext)
+export function useAuth() {
+  return useContext(AuthContext);
 }
 
 const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null)
-  const [userLoggedIn, setUserLoggedIn] = useState(false)
-  const [loggedInUser, setLoggedInUser] = useState({
+  const [currentUser, setCurrentUser] = useState(null);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [loggedInUserInfo, setLoggedInUserInfo] = useState({
     name: '',
-    email: '',
-    role: '',
-    _id: '',
-  })
+    email: ''
+  });
 
-  const [loading, setLoading] = useState(false)
-  // useEffect(() => {
-  //   const unsubscribe = onAuthStateChanged(auth, async user => {
-  //     if (user) {
-  //       setCurrentUser(user)
-  //       setUserLoggedIn(true)
-  //       setLoading(false)
-  //     } else {
-  //       setCurrentUser(null)
-  //       setUserLoggedIn(false)
-  //       setLoggedInUser({
-  //         name: '',
-  //         email: '',
-  //         role: ''
-  //       })
-  //     }
-  //     setLoading(false)
-  //   })
+  const [loading, setLoading] = useState(true);
+  const path = useLocation();
 
-  //   return () => unsubscribe()
-  // }, [])
   useEffect(() => {
-    if(userLoggedIn){
-      localStorage.setItem('user', JSON.stringify(loggedInUser))
-    }
-  }, [userLoggedIn])
+    const userData = localStorage.getItem('user');
+    setLoggedInUserInfo(JSON.parse(userData));
+    
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [path.pathname]);
 
   const value = {
     currentUser,
     setCurrentUser,
     userLoggedIn,
     setUserLoggedIn,
-    loggedInUser,
-    setLoggedInUser,
+    loggedInUserInfo,
+    setLoggedInUserInfo,
     loading,
-    setLoading
-  }
-  console.log(loggedInUser)
+    setLoading,
+  };
+
   return (
     <AuthContext.Provider value={value}>
-      {!loading ? (
-        children
-      ) : (
+      {loading ? ( 
         <img
-          style={{ width: '100vw', height: '100vh' }}
+          style={{ width: '100vw', height: '100vh', objectFit: 'cover' }}
           src={loadingGif}
           alt='loading...'
         />
+      ) : ( 
+        children
       )}
     </AuthContext.Provider>
-  )
-}
+  );
+};
 
 AuthProvider.propTypes = {
-  children: PropTypes.node.isRequired
-}
+  children: PropTypes.node.isRequired,
+};
 
-export default AuthProvider
+export default AuthProvider;

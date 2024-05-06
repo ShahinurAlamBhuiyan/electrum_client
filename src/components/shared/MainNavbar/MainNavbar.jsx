@@ -5,7 +5,13 @@ import { useAuth } from '../../Auth/contexts/authContext'
 import { doSignOut } from '../../Auth/firebase/auth'
 import logoutIcon from '../../../assets/logout.png'
 const MainNavbar = () => {
-  const { currentUser } = useAuth()
+  const { loggedInUserInfo } = useAuth()
+
+  const handleLogout = () => {
+    localStorage.removeItem('user')
+    doSignOut()
+    // window.location.reload();
+  }
 
   return (
     <Navbar collapseOnSelect expand='lg' className='navbar'>
@@ -51,7 +57,7 @@ const MainNavbar = () => {
             </Nav.Link>
           </Nav>
           <Nav className='navbar-container'>
-            {currentUser?.email ? (
+            {loggedInUserInfo?.email ? (
               <div
                 style={{
                   display: 'flex',
@@ -64,12 +70,12 @@ const MainNavbar = () => {
                   <Button>My Account</Button>
                 </Nav.Link>
                 <img
-                  onClick={() => doSignOut()}
+                  onClick={() => handleLogout()}
                   style={{
                     width: '30px',
                     height: '30px',
                     background: 'transparent',
-                    cursor: 'pointer',
+                    cursor: 'pointer'
                   }}
                   src={logoutIcon}
                 />

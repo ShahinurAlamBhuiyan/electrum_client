@@ -3,9 +3,9 @@ import { Navigate } from 'react-router-dom'
 import { useAuth } from '../components/Auth/contexts/authContext'
 
 const PrivateRoutes = ({ children }) => {
-  const { userLoggedIn } = useAuth()
-
-  if (!userLoggedIn) {
+  const { loggedInUserInfo } = useAuth()
+  
+  if (!loggedInUserInfo.email) {
     return <Navigate to='/sign-in' />
   }
 

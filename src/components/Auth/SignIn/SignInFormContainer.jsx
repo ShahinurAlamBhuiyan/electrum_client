@@ -17,8 +17,6 @@ const SignInFormContainer = () => {
   const [isSigningIn, setIsSigningIn] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
 
-
-
   const onSubmit = async e => {
     e.preventDefault()
     if (!isSigningIn) {
@@ -32,11 +30,15 @@ const SignInFormContainer = () => {
     }
   }
 
+  const getUserByEmail = async () => {
+    
+  }
+
   const onGoogleSignIn = e => {
     e.preventDefault()
     if (!isSigningIn) {
       setIsSigningIn(true)
-      
+
       doSignInWithGoogle().catch(err => {
         console.log(err)
         setIsSigningIn(false)

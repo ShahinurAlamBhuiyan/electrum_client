@@ -13,8 +13,7 @@ import googleIcon from '../../../assets/Social_icons/googleIcon.png'
 import { useAuth } from '../contexts/authContext'
 
 const SignUpFormContainer = () => {
-  const { userLoggedIn, setLoggedInUser, setUserLoggedIn, setLoading } =
-    useAuth()
+  const { userLoggedIn, setLoading, setLoggedInUserInfo } = useAuth()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [role] = useState('user')
@@ -27,7 +26,7 @@ const SignUpFormContainer = () => {
     e.preventDefault()
     const allowedEmailDomains = ['gmail.com', 'yahoo.com', 'outlook.com']
 
-    const emailDomain = email.split('@')[1] 
+    const emailDomain = email.split('@')[1]
 
     if (password !== confirmPassword) {
       setErrorMessage('Passwords do not match.')
@@ -43,15 +42,12 @@ const SignUpFormContainer = () => {
       setIsSigningUp(true)
       try {
         await doCreateUserWithEmailAndPassword(email, password)
-        alert('Your account was created successfully!')
-        setLoggedInUser({
-          name,
-          email,
-          role
-        })
-        setUserLoggedIn(true)
         setLoading(true)
         storeUserToDB(name, email, role)
+        setLoggedInUserInfo(true)
+        localStorage.setItem('user', JSON.stringify({ name, email, role }))
+
+        alert('Your account was created successfully!')
       } catch (error) {
         console.log(error.message)
         setErrorMessage(error.message)
@@ -63,12 +59,12 @@ const SignUpFormContainer = () => {
   // POST REQUEST....
   const storeUserToDB = async (name, email, role) => {
     try {
+      setLoading(false)
       await axios.post(`${import.meta.env.VITE_SERVER}/signup`, {
         name,
         email,
         role
       })
-      setLoading(false)
     } catch (error) {
       console.error('Sign-up failed:', error.response.data.error)
       setErrorMessage('Sign-up failed. Please try again.')
@@ -83,6 +79,9 @@ const SignUpFormContainer = () => {
       doSignInWithGoogle()
         .then(res => {
           storeUserToDB(res.user.displayName, res.user.email, role)
+          setLoading(true)
+          setLoggedInUserInfo(true)
+          localStorage.setItem('user', JSON.stringify({ name, email }))
         })
         .catch(err => {
           console.log(err)
