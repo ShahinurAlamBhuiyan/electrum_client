@@ -8,7 +8,6 @@ import {
 import googleIcon from '../../../assets/Social_icons/googleIcon.png'
 import { useAuth } from '../contexts/authContext'
 import axios from 'axios'
-// import axios from 'axios'
 
 const SignInFormContainer = () => {
   const { userLoggedIn, setLoading, setUserLoggedIn } = useAuth()
@@ -64,7 +63,8 @@ const SignInFormContainer = () => {
         JSON.stringify({
           name: response.data.name,
           email: response.data.email,
-          role: response.data.role
+          role: response.data.role,
+          _id: response.data._id
         })
       )
       setLoading(false)

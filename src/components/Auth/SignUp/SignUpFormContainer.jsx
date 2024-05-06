@@ -7,10 +7,9 @@ import {
   doSignInWithGoogle
 } from '../firebase/auth'
 
-import axios from 'axios'
-
 import googleIcon from '../../../assets/Social_icons/googleIcon.png'
 import { useAuth } from '../contexts/authContext'
+import axios from 'axios'
 
 const SignUpFormContainer = () => {
   const { userLoggedIn, setLoading, setUserLoggedIn } = useAuth()
@@ -39,19 +38,17 @@ const SignUpFormContainer = () => {
     }
 
     if (!isSigningUp) {
-      setIsSigningUp(true)
       try {
         await doCreateUserWithEmailAndPassword(email, password)
+        getUserByEmail(email)
+        setIsSigningUp(true)
         setLoading(true)
-        storeUserToDB(name, email, role)
         setUserLoggedIn(true)
-        localStorage.setItem('user', JSON.stringify({ name, email, role }))
-
+        storeUserToDB(name, email, role)
         alert('Your account was created successfully!')
       } catch (error) {
         console.log(error.message)
         setErrorMessage(error.message)
-        setIsSigningUp(false)
       }
     }
   }
@@ -81,13 +78,40 @@ const SignUpFormContainer = () => {
           storeUserToDB(res.user.displayName, res.user.email, role)
           setLoading(true)
           setUserLoggedIn(true)
-          localStorage.setItem('user', JSON.stringify({ name, email, role }))
+          getUserByEmail(res.user.email)
         })
         .catch(err => {
           console.log(err)
           setIsSigningUp(false)
           setErrorMessage('Google sign-up failed. Please try again.')
         })
+    }
+  }
+
+  const getUserByEmail = async userEmail => {
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_SERVER}/user`, {
+        params: { email: userEmail }
+      })
+
+      console.log({ response })
+      localStorage.setItem(
+        'user',
+        JSON.stringify({
+          name: response.data.name,
+          email: response.data.email,
+          role: response.data.role,
+          _id: response.data._id
+        })
+      )
+      setLoading(false)
+    } catch (err) {
+      if (err.response) {
+        setErrorMessage(err.response.data)
+      } else {
+        setErrorMessage('An error occurred while fetching user data')
+      }
+      // setLoggedInUser(null) // Clear any previously fetched user data
     }
   }
 
