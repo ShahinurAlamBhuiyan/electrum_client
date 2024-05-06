@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Spinner } from 'react-bootstrap'
 import axios from 'axios'
 import './ComponentDetails.css'
 
@@ -23,21 +24,32 @@ const ComponentDetails = () => {
           const ownerResponse = await axios.get(
             `${import.meta.env.VITE_SERVER}/user/${fetchedComponent.owner_id}`
           )
-          setOwner(ownerResponse.data) // Store the fetched owner's information
+          setOwner(ownerResponse.data)
         }
       } catch (err) {
         console.error('Error fetching component details:', err)
-        setError('Failed to fetch component details.') // Set an error message
+        setError('Failed to fetch component details.')
       } finally {
-        setLoading(false) // Stop loading once complete
+        setLoading(false)
       }
     }
 
-    fetchComponent() // Fetch the component when the component mounts
-  }, [component_id]) // Dependency on component_id, re-fetch if it changes
+    fetchComponent()
+  }, [component_id])
 
   if (loading) {
-    return <div>Loading...</div>
+    return (
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '400px'
+        }}
+      >
+        <Spinner animation='grow' />
+      </div>
+    )
   }
 
   if (error) {
@@ -70,16 +82,22 @@ const ComponentDetails = () => {
         </div>
         <div className='info-section'>
           <h1 className='component-name'>{component.name}</h1>
-          <p className='transparent color-black'>
-            <span className='color-black'>Owner name: </span>
-            {owner.name || 'Unknown'}
+          <p className='transparent color-black' style={{fontWeight:'bold'}}>
+            Owner Name:
+            <span className='color-black' style={{fontWeight:'normal'}}> {owner.name || 'Unknown'}</span>
           </p>
           <p className='transparent color-black'>
             <span className='color-red'>{component.quantity}</span> items left
           </p>
           <p className='component-price color-black'>
-            Price: ${component.selling_price}
-            <span className='color-red' style={{ fontSize: '30px' }}>
+            Price:
+            <span
+              className='color-red'
+              style={{ fontSize: '30px', padding: '10px' }}
+            >
+              ${component.selling_price}
+            </span>
+            <span style={{ textDecoration: 'line-through', color: 'black' }}>
               ${component.buying_price}
             </span>
           </p>

@@ -6,11 +6,10 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Spinner } from 'react-bootstrap'
 
-
 const AllComponentsContainer = ({ activeNew, activeOld, searchTerm }) => {
-  const [components, setComponents] = useState([]) 
-  const [loading, setLoading] = useState(true) 
-  const [error, setError] = useState(null) 
+  const [components, setComponents] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   // Fetch all components when the component mounts
   useEffect(() => {
@@ -18,28 +17,39 @@ const AllComponentsContainer = ({ activeNew, activeOld, searchTerm }) => {
       try {
         const response = await axios.get(
           `${import.meta.env.VITE_SERVER}/components`
-        ) 
-        setComponents(response.data) 
+        )
+        setComponents(response.data)
       } catch (err) {
-        setError(err.message || 'Error fetching components') 
+        setError(err.message || 'Error fetching components')
       } finally {
-        setLoading(false) 
+        setLoading(false)
       }
     }
 
-    fetchComponents() 
-  }, []) 
+    fetchComponents()
+  }, [])
 
   if (loading) {
-    return <Spinner animation='grow' /> 
+    return (
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '400px'
+        }}
+      >
+        <Spinner animation='grow' />
+      </div>
+    )
   }
 
   if (error) {
-    return <div>Error: {error}</div> 
+    return <div>Error: {error}</div>
   }
 
   if (components.length === 0) {
-    return <div>No components found</div> 
+    return <div>No components found</div>
   }
 
   console.log(components)
@@ -48,9 +58,7 @@ const AllComponentsContainer = ({ activeNew, activeOld, searchTerm }) => {
     .filter(component => component.type === 'new')
     .filter(
       component =>
-        component.name
-          ?.toLowerCase()
-          .includes(searchTerm?.toLowerCase()) ||
+        component.name?.toLowerCase().includes(searchTerm?.toLowerCase()) ||
         component.description?.toLowerCase().includes(searchTerm?.toLowerCase())
     )
 
@@ -58,9 +66,7 @@ const AllComponentsContainer = ({ activeNew, activeOld, searchTerm }) => {
     .filter(component => component.type === 'old')
     .filter(
       component =>
-        component.name
-          ?.toLowerCase()
-          .includes(searchTerm?.toLowerCase()) ||
+        component.name?.toLowerCase().includes(searchTerm?.toLowerCase()) ||
         component.description?.toLowerCase().includes(searchTerm?.toLowerCase())
     )
 
