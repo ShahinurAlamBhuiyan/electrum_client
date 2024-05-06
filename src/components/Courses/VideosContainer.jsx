@@ -42,9 +42,6 @@ const VideosContainer = () => {
     <div className='video-container'>
       <div className='videos'>
         <h2>Popular Videos</h2>
-        <button type='button' className='btn btn-outline-success' disabled>
-          View All
-        </button>
       </div>
       <Container className='d-flex justify-content-center'>
         <Row xs={1} sm={1} md={3} className='g-4'>

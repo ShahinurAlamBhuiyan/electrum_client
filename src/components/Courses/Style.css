@@ -27,7 +27,7 @@
   border: 0.1px solid rgb(70, 68, 68);
   height: 500px !important;
   cursor: pointer;
-  margin-bottom: 40px;
+  
 }
 .course {
   display: flex;
@@ -74,10 +74,6 @@
 .video_text_container {
   padding: 30px;
 }
-
-  .videos button{
-    margin: 2.5%;
-  }
 
   .videos h2{
     padding: 20px;
