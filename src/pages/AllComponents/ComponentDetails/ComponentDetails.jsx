@@ -82,9 +82,11 @@ const ComponentDetails = () => {
         </div>
         <div className='info-section'>
           <h1 className='component-name'>{component.name}</h1>
-          <p className='transparent color-black' style={{fontWeight:'bold'}}>
+          <p className='transparent color-black' style={{ fontWeight: 'bold' }}>
             Owner Name:
-            <span className='color-black' style={{fontWeight:'normal'}}> {owner.name || 'Unknown'}</span>
+            <span className='color-black' style={{ fontWeight: 'normal' }}>
+              &nbsp;{component.type === 'old' ? owner.name : 'Admin'}
+            </span>
           </p>
           <p className='transparent color-black'>
             <span className='color-red'>{component.quantity}</span> items left
@@ -97,9 +99,17 @@ const ComponentDetails = () => {
             >
               ${component.selling_price}
             </span>
-            <span style={{ textDecoration: 'line-through', color: 'black' }}>
-              ${component.buying_price}
-            </span>
+            {component.type === 'old' && (
+              <span
+                style={{
+                  textDecoration: 'line-through',
+                  color: 'black',
+                  textDecorationColor: 'red'
+                }}
+              >
+                ${component.buying_price}
+              </span>
+            )}
           </p>
           <p className='component-description color-black'>
             {component.description}
