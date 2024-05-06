@@ -7,6 +7,7 @@ import {
 
 import googleIcon from '../../../assets/Social_icons/googleIcon.png'
 import { useAuth } from '../contexts/authContext'
+// import axios from 'axios'
 
 const SignInFormContainer = () => {
   const { userLoggedIn } = useAuth()
@@ -15,6 +16,24 @@ const SignInFormContainer = () => {
   const [password, setPassword] = useState('')
   const [isSigningIn, setIsSigningIn] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+
+  // console.log(loggedInUser)
+
+  // const fetchUserData = async (email) => {
+  //   try {
+  //     const response = await axios.get(`${import.meta.env.VITE_SERVER}/user`, {
+  //       params: { email }
+  //     })
+  //     setLoggedInUser(response.data)
+  //   } catch (err) {
+  //     if (err.response) {
+  //       setErrorMessage(err.response.data)
+  //     } else {
+  //       setErrorMessage('An error occurred while fetching user data')
+  //     }
+  //     setLoggedInUser(null) // Clear any previously fetched user data
+  //   }
+  // }
 
   const onSubmit = async e => {
     e.preventDefault()

@@ -30,16 +30,7 @@
 .job_input:focus {
   border: none;
   text-decoration: none;
-    border-radius: 10px;
-    padding: 5px;
-    width: 90%;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid gray;
-    outline: none; /* This line removes the outline when the input is focused */
-  }
-  
+}
 
 .btn_job_search {
   border: 1px solid #d7d8d7;

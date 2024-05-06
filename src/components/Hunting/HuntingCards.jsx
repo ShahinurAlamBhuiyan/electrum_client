@@ -56,12 +56,12 @@ const HuntingCards = ({ searchedData, query }) => {
       {!query && (
         <div>
           {visibleJobs < allJobs.length && (
-            <button className='btn_see_more text-white' onClick={showMoreJobs}>
+            <button className='btn_see_more' onClick={showMoreJobs}>
               Show More
             </button>
           )}
           {visibleJobs > 3 && (
-            <button className='btn_see_more text-white' onClick={showLessJobs}>
+            <button className='btn_see_more' onClick={showLessJobs}>
               Show Less
             </button>
           )}

@@ -1,5 +1,9 @@
 /* SideMenu */
 .sideMenu_container{
-    background: grey;
     flex: 1;
+}
+
+
+.sidebar_container{
+    padding: 30px;
 }
