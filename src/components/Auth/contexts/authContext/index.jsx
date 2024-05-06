@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { createContext, useContext, useEffect, useState } from 'react'
-import { auth } from '../../firebase/firebase'
-import { onAuthStateChanged } from 'firebase/auth'
+// import { auth } from '../../firebase/firebase'
+// import { onAuthStateChanged } from 'firebase/auth'
 import loadingGif from '../../../../assets/loading.gif'
 
 const AuthContext = createContext()
@@ -16,65 +16,48 @@ const AuthProvider = ({ children }) => {
   const [loggedInUser, setLoggedInUser] = useState({
     name: '',
     email: '',
-    role: ''
+    role: '',
+    _id: '',
   })
 
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, async user => {
+  //     if (user) {
+  //       setCurrentUser(user)
+  //       setUserLoggedIn(true)
+  //       setLoading(false)
+  //     } else {
+  //       setCurrentUser(null)
+  //       setUserLoggedIn(false)
+  //       setLoggedInUser({
+  //         name: '',
+  //         email: '',
+  //         role: ''
+  //       })
+  //     }
+  //     setLoading(false)
+  //   })
+
+  //   return () => unsubscribe()
+  // }, [])
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async user => {
-      if (user) {
-        setCurrentUser(user)
-        setUserLoggedIn(true)
-        setLoading(false)
-        // const email = user.email
-
-        // try {
-        //   const response = await axios.get(
-        //     `${import.meta.env.VITE_SERVER}/user`,
-        //     {
-        //       params: { email }
-        //     }
-        //   )
-        //   const fetchedUser = response.data
-        //   setLoggedInUser({
-        //     name: fetchedUser.name,
-        //     email: fetchedUser.email,
-        //     role: fetchedUser.role
-        //   })
-
-        //   setCurrentUser(user)
-        //   setUserLoggedIn(true)
-        // } catch (err) {
-        //   console.error('Error fetching user data:', err)
-        //   setLoggedInUser({
-        //     name: '',
-        //     email: '',
-        //     role: ''
-        //   })
-        // }
-      } else {
-        setCurrentUser(null)
-        setUserLoggedIn(false)
-        setLoggedInUser({
-          name: '',
-          email: '',
-          role: ''
-        })
-      }
-      setLoading(false)
-    })
-
-    return () => unsubscribe()
-  }, [])
+    if(userLoggedIn){
+      localStorage.setItem('user', JSON.stringify(loggedInUser))
+    }
+  }, [userLoggedIn])
 
   const value = {
     currentUser,
+    setCurrentUser,
     userLoggedIn,
     setUserLoggedIn,
+    loggedInUser,
+    setLoggedInUser,
     loading,
-    loggedInUser
+    setLoading
   }
-
+  console.log(loggedInUser)
   return (
     <AuthContext.Provider value={value}>
       {!loading ? (

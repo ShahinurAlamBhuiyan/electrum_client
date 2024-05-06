@@ -36,6 +36,7 @@ const SignInFormContainer = () => {
     e.preventDefault()
     if (!isSigningIn) {
       setIsSigningIn(true)
+      
       doSignInWithGoogle().catch(err => {
         console.log(err)
         setIsSigningIn(false)

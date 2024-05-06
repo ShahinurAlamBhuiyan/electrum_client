@@ -13,7 +13,8 @@ import googleIcon from '../../../assets/Social_icons/googleIcon.png'
 import { useAuth } from '../contexts/authContext'
 
 const SignUpFormContainer = () => {
-  const { userLoggedIn } = useAuth()
+  const { userLoggedIn, setLoggedInUser, setUserLoggedIn, setLoading } =
+    useAuth()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [role] = useState('user')
@@ -26,7 +27,7 @@ const SignUpFormContainer = () => {
     e.preventDefault()
     const allowedEmailDomains = ['gmail.com', 'yahoo.com', 'outlook.com']
 
-    const emailDomain = email.split('@')[1] // Get the domain (e.g., "gmail.com")
+    const emailDomain = email.split('@')[1] 
 
     if (password !== confirmPassword) {
       setErrorMessage('Passwords do not match.')
@@ -43,6 +44,13 @@ const SignUpFormContainer = () => {
       try {
         await doCreateUserWithEmailAndPassword(email, password)
         alert('Your account was created successfully!')
+        setLoggedInUser({
+          name,
+          email,
+          role
+        })
+        setUserLoggedIn(true)
+        setLoading(true)
         storeUserToDB(name, email, role)
       } catch (error) {
         console.log(error.message)
@@ -60,6 +68,7 @@ const SignUpFormContainer = () => {
         email,
         role
       })
+      setLoading(false)
     } catch (error) {
       console.error('Sign-up failed:', error.response.data.error)
       setErrorMessage('Sign-up failed. Please try again.')
