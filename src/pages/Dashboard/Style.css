@@ -70,3 +70,44 @@
 .addComponent-form-button:hover {
   background-color: rgba(11, 21, 17, 0.75);
 }
+
+
+/* sabbir's starting... */
+.profile-container {
+  background-color: #222; /* Dark background for the profile container */
+  color: #fff; /* Light text color for contrast */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 600px; /* Adjust width as needed */
+  margin: 40px auto; /* Center the container on the page */
+}
+
+.profile-heading {
+  color: #ccc; /* Slightly lighter color for headings */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  background-color: #333; /* Slightly lighter than the container for layer effect */
+  border-radius: 8px;
+  padding: 20px;
+  line-height: 1.6; /* Improved line spacing for readability */
+}
+
+.profile-detail {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #bbb; /* Light gray for text details */
+}
+
+.welcome-message {
+  font-size: 18px;
+  color: #f0f0f0; /* Brighter white for important text */
+}
+
+.user-name {
+  font-weight: bold; /* Highlight the user name */
+  color: #4CAF50; /* A splash of color for key details */
+}
