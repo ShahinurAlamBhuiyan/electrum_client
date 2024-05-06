@@ -24,18 +24,29 @@ const SignUpFormContainer = () => {
 
   const onSubmit = async e => {
     e.preventDefault()
+    const allowedEmailDomains = ['gmail.com', 'yahoo.com', 'outlook.com']
+
+    const emailDomain = email.split('@')[1] // Get the domain (e.g., "gmail.com")
+
     if (password !== confirmPassword) {
       setErrorMessage('Passwords do not match.')
       return
     }
+
+    if (!allowedEmailDomains.includes(emailDomain)) {
+      setErrorMessage('Invalid email domain. Please use a valid email domain.')
+      return
+    }
+
     if (!isSigningUp) {
       setIsSigningUp(true)
       try {
         await doCreateUserWithEmailAndPassword(email, password)
-        alert('your account created successfully!')
+        alert('Your account was created successfully!')
         storeUserToDB(name, email, role)
       } catch (error) {
-        setErrorMessage('Sign-up failed. Please try again.')
+        console.log(error.message)
+        setErrorMessage(error.message)
         setIsSigningUp(false)
       }
     }
@@ -44,12 +55,11 @@ const SignUpFormContainer = () => {
   // POST REQUEST....
   const storeUserToDB = async (name, email, role) => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_SERVER}/signup`, {
+      await axios.post(`${import.meta.env.VITE_SERVER}/signup`, {
         name,
         email,
         role
       })
-      console.log(response.data.message)
     } catch (error) {
       console.error('Sign-up failed:', error.response.data.error)
       setErrorMessage('Sign-up failed. Please try again.')
