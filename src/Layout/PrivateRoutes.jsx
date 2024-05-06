@@ -5,7 +5,7 @@ import { useAuth } from '../components/Auth/contexts/authContext'
 const PrivateRoutes = ({ children }) => {
   const { loggedInUserInfo } = useAuth()
   
-  if (!loggedInUserInfo.email) {
+  if (!loggedInUserInfo?.email) {
     return <Navigate to='/sign-in' />
   }
 
