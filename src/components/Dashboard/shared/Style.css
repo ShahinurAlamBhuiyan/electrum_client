@@ -7,3 +7,41 @@
 .sidebar_container{
     padding: 30px;
 }
+/* sabbir */
+.sidebar-container {
+    /* background: linear-gradient(to right, #222A28, #37682F); Gradient background */
+    color: #ffffff; /* White text color for contrast */
+    padding: 20px; /* Padding around the content */
+    width: 250px; /* Fixed width for the sidebar */
+    height: 100vh; /* Full height */
+    box-sizing: border-box; /* Include padding in width */
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+.logo {
+    cursor: pointer; /* Ensure it's clear the logo is clickable */
+    text-align: center; /* Center-align logo text */
+    margin-bottom: 20px; /* Space below the logo */
+    font-size: 34px; /* Larger font size for the logo */
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center-align the links */
+}
+
+.nav-links a {
+    color: #ffffff; /* White text color for contrast */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px; /* Padding for larger click area */
+    width: 100%; /* Full width to align text */
+    text-align: center; /* Center-align text in links */
+    border-radius: 5px; /* Rounded corners for aesthetics */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-links a:hover {
+    background-color: #1a4221; /* Dark green background on hover */
+}
