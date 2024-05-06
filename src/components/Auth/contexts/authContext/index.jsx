@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types'
 import { createContext, useContext, useEffect, useState } from 'react'
-import { auth } from '../../firebase/firebase'
-import { onAuthStateChanged } from 'firebase/auth'
-import axios from 'axios'
 import loadingGif from '../../../../assets/loading.gif'
+import { useLocation } from 'react-router-dom'
 
 const AuthContext = createContext()
 
@@ -14,75 +12,47 @@ export function useAuth () {
 const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null)
   const [userLoggedIn, setUserLoggedIn] = useState(false)
-  const [loggedInUser, setLoggedInUser] = useState({
+  const [loggedInUserInfo, setLoggedInUserInfo] = useState({
     name: '',
     email: '',
     role: ''
   })
 
   const [loading, setLoading] = useState(true)
+  const path = useLocation()
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async user => {
-      if (user) {
-        const email = user.email
+    const userData = localStorage.getItem('user')
+    setLoggedInUserInfo(JSON.parse(userData))
 
-        try {
-          const response = await axios.get(
-            `${import.meta.env.VITE_SERVER}/user`,
-            {
-              params: { email }
-            }
-          )
-          const fetchedUser = response.data
-          setLoggedInUser({
-            name: fetchedUser.name,
-            email: fetchedUser.email,
-            role: fetchedUser.role
-          })
-
-          setCurrentUser(user)
-          setUserLoggedIn(true)
-        } catch (err) {
-          console.error('Error fetching user data:', err)
-          setLoggedInUser({
-            name: '',
-            email: '',
-            role: ''
-          })
-        }
-      } else {
-        setCurrentUser(null)
-        setUserLoggedIn(false)
-        setLoggedInUser({
-          name: '',
-          email: '',
-          role: ''
-        })
-      }
+    const timeout = setTimeout(() => {
       setLoading(false)
-    })
+    }, 500)
 
-    return () => unsubscribe()
-  }, [])
+    return () => clearTimeout(timeout)
+  }, [path.pathname])
 
   const value = {
     currentUser,
+    setCurrentUser,
     userLoggedIn,
+    setUserLoggedIn,
+    loggedInUserInfo,
+    setLoggedInUserInfo,
     loading,
-    loggedInUser
+    setLoading
   }
 
   return (
     <AuthContext.Provider value={value}>
-      {!loading ? (
-        children
-      ) : (
+      {loading ? (
         <img
-          style={{ width: '100vw', height: '100vh' }}
+          style={{ width: '100vw', height: '100vh', objectFit: 'cover' }}
           src={loadingGif}
           alt='loading...'
         />
+      ) : (
+        children
       )}
     </AuthContext.Provider>
   )
@@ -91,6 +61,5 @@ const AuthProvider = ({ children }) => {
 AuthProvider.propTypes = {
   children: PropTypes.node.isRequired
 }
-
 
 export default AuthProvider

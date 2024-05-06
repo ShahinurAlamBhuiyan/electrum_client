@@ -7,13 +7,12 @@ import {
   doSignInWithGoogle
 } from '../firebase/auth'
 
-import axios from 'axios'
-
 import googleIcon from '../../../assets/Social_icons/googleIcon.png'
 import { useAuth } from '../contexts/authContext'
+import axios from 'axios'
 
 const SignUpFormContainer = () => {
-  const { userLoggedIn } = useAuth()
+  const { userLoggedIn, setLoading, setUserLoggedIn } = useAuth()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [role] = useState('user')
@@ -24,19 +23,32 @@ const SignUpFormContainer = () => {
 
   const onSubmit = async e => {
     e.preventDefault()
+    const allowedEmailDomains = ['gmail.com', 'yahoo.com', 'outlook.com']
+
+    const emailDomain = email.split('@')[1]
+
     if (password !== confirmPassword) {
       setErrorMessage('Passwords do not match.')
       return
     }
+
+    if (!allowedEmailDomains.includes(emailDomain)) {
+      setErrorMessage('Invalid email domain. Please use a valid email domain.')
+      return
+    }
+
     if (!isSigningUp) {
-      setIsSigningUp(true)
       try {
         await doCreateUserWithEmailAndPassword(email, password)
-        alert('your account created successfully!')
+        getUserByEmail(email)
+        setIsSigningUp(true)
+        setLoading(true)
+        setUserLoggedIn(true)
         storeUserToDB(name, email, role)
+        alert('Your account was created successfully!')
       } catch (error) {
-        setErrorMessage('Sign-up failed. Please try again.')
-        setIsSigningUp(false)
+        console.log(error.message)
+        setErrorMessage(error.message)
       }
     }
   }
@@ -44,12 +56,12 @@ const SignUpFormContainer = () => {
   // POST REQUEST....
   const storeUserToDB = async (name, email, role) => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_SERVER}/signup`, {
+      setLoading(false)
+      await axios.post(`${import.meta.env.VITE_SERVER}/signup`, {
         name,
         email,
         role
       })
-      console.log(response.data.message)
     } catch (error) {
       console.error('Sign-up failed:', error.response.data.error)
       setErrorMessage('Sign-up failed. Please try again.')
@@ -64,12 +76,42 @@ const SignUpFormContainer = () => {
       doSignInWithGoogle()
         .then(res => {
           storeUserToDB(res.user.displayName, res.user.email, role)
+          setLoading(true)
+          setUserLoggedIn(true)
+          getUserByEmail(res.user.email)
         })
         .catch(err => {
           console.log(err)
           setIsSigningUp(false)
           setErrorMessage('Google sign-up failed. Please try again.')
         })
+    }
+  }
+
+  const getUserByEmail = async userEmail => {
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_SERVER}/user`, {
+        params: { email: userEmail }
+      })
+
+      console.log({ response })
+      localStorage.setItem(
+        'user',
+        JSON.stringify({
+          name: response.data.name,
+          email: response.data.email,
+          role: response.data.role,
+          _id: response.data._id
+        })
+      )
+      setLoading(false)
+    } catch (err) {
+      if (err.response) {
+        setErrorMessage(err.response.data)
+      } else {
+        setErrorMessage('An error occurred while fetching user data')
+      }
+      // setLoggedInUser(null) // Clear any previously fetched user data
     }
   }
 
