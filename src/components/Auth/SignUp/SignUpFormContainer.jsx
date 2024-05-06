@@ -40,11 +40,10 @@ const SignUpFormContainer = () => {
     if (!isSigningUp) {
       try {
         await doCreateUserWithEmailAndPassword(email, password)
-        getUserByEmail(email)
+        storeUserToDB(name, email, role)
         setIsSigningUp(true)
         setLoading(true)
         setUserLoggedIn(true)
-        storeUserToDB(name, email, role)
         alert('Your account was created successfully!')
       } catch (error) {
         console.log(error.message)
@@ -61,7 +60,9 @@ const SignUpFormContainer = () => {
         name,
         email,
         role
-      })
+      }).then(res => 
+        getUserByEmail(res?.data?.email)
+      )
     } catch (error) {
       console.error('Sign-up failed:', error.response.data.error)
       setErrorMessage('Sign-up failed. Please try again.')
@@ -75,10 +76,10 @@ const SignUpFormContainer = () => {
       setIsSigningUp(true)
       doSignInWithGoogle()
         .then(res => {
+          console.log(res.user.email)
           storeUserToDB(res.user.displayName, res.user.email, role)
           setLoading(true)
           setUserLoggedIn(true)
-          getUserByEmail(res.user.email)
         })
         .catch(err => {
           console.log(err)

@@ -21,6 +21,7 @@ import ViewProfile from '../pages/Dashboard/ViewProfile'
 import YourOrder from '../pages/Dashboard/YourOrder'
 import PrivateRoutes from '../Layout/PrivateRoutes'
 import AddComponents from '../pages/Dashboard/AddComponents'
+import MyComponents from '../pages/Dashboard/MyComponents'
 
 // Define routes inside the main layout
 const mainRoutes = [
@@ -109,6 +110,14 @@ const dashboardRoutes = [
     element: (
       <PrivateRoutes>
         <AddComponents />
+      </PrivateRoutes>
+    )
+  },
+  {
+    path: 'my-components',
+    element: (
+      <PrivateRoutes>
+        <MyComponents />
       </PrivateRoutes>
     )
   }
