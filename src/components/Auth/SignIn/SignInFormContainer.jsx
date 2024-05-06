@@ -7,10 +7,11 @@ import {
 
 import googleIcon from '../../../assets/Social_icons/googleIcon.png'
 import { useAuth } from '../contexts/authContext'
+import axios from 'axios'
 // import axios from 'axios'
 
 const SignInFormContainer = () => {
-  const { userLoggedIn } = useAuth()
+  const { userLoggedIn, setLoading, setUserLoggedIn } = useAuth()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -20,18 +21,17 @@ const SignInFormContainer = () => {
   const onSubmit = async e => {
     e.preventDefault()
     if (!isSigningIn) {
-      setIsSigningIn(true)
-      await doSignInWithEmailAndPassword(email, password).catch(err => {
-        console.log(err)
-        setIsSigningIn(false)
-        setErrorMessage('Wrong credential!')
-      })
-      // doSendEmailVerification();
+      try {
+        await doSignInWithEmailAndPassword(email, password)
+        getUserByEmail(email)
+        setIsSigningIn(true)
+        setLoading(true)
+        setUserLoggedIn(true)
+      } catch (error) {
+        console.log(error.message)
+        setErrorMessage(error.message)
+      }
     }
-  }
-
-  const getUserByEmail = async () => {
-    
   }
 
   const onGoogleSignIn = e => {
@@ -39,11 +39,42 @@ const SignInFormContainer = () => {
     if (!isSigningIn) {
       setIsSigningIn(true)
 
-      doSignInWithGoogle().catch(err => {
-        console.log(err)
-        setIsSigningIn(false)
-        setErrorMessage('Google sign-in failed. Please try again.')
+      doSignInWithGoogle()
+        .then(res => {
+          setLoading(true)
+          getUserByEmail(res.user.email)
+          setIsSigningIn(true)
+          setUserLoggedIn(true)
+        })
+        .catch(err => {
+          console.log(err)
+          setIsSigningIn(false)
+          setErrorMessage('Google sign-in failed. Please try again.')
+        })
+    }
+  }
+  const getUserByEmail = async userEmail => {
+    console.log(userEmail)
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_SERVER}/user`, {
+        params: { email: userEmail }
       })
+      localStorage.setItem(
+        'user',
+        JSON.stringify({
+          name: response.data.name,
+          email: response.data.email,
+          role: response.data.role
+        })
+      )
+      setLoading(false)
+    } catch (err) {
+      if (err.response) {
+        setErrorMessage(err.response.data)
+      } else {
+        setErrorMessage('An error occurred while fetching user data')
+      }
+      // setLoggedInUser(null) // Clear any previously fetched user data
     }
   }
 

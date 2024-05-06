@@ -10,7 +10,7 @@ const MainNavbar = () => {
   const handleLogout = () => {
     localStorage.removeItem('user')
     doSignOut()
-    // window.location.reload();
+    window.location.reload();
   }
 
   return (

@@ -13,7 +13,7 @@ import googleIcon from '../../../assets/Social_icons/googleIcon.png'
 import { useAuth } from '../contexts/authContext'
 
 const SignUpFormContainer = () => {
-  const { userLoggedIn, setLoading, setLoggedInUserInfo } = useAuth()
+  const { userLoggedIn, setLoading, setUserLoggedIn } = useAuth()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [role] = useState('user')
@@ -44,7 +44,7 @@ const SignUpFormContainer = () => {
         await doCreateUserWithEmailAndPassword(email, password)
         setLoading(true)
         storeUserToDB(name, email, role)
-        setLoggedInUserInfo(true)
+        setUserLoggedIn(true)
         localStorage.setItem('user', JSON.stringify({ name, email, role }))
 
         alert('Your account was created successfully!')
@@ -80,8 +80,8 @@ const SignUpFormContainer = () => {
         .then(res => {
           storeUserToDB(res.user.displayName, res.user.email, role)
           setLoading(true)
-          setLoggedInUserInfo(true)
-          localStorage.setItem('user', JSON.stringify({ name, email }))
+          setUserLoggedIn(true)
+          localStorage.setItem('user', JSON.stringify({ name, email, role }))
         })
         .catch(err => {
           console.log(err)
