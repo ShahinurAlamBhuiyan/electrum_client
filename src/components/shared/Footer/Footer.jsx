@@ -84,7 +84,7 @@ export default function Footer () {
             >
               <h6
                 style={{ backgroundColor: 'transparent' }}
-                className='text-uppercase fw-bold mb-4'
+                className='text-uppercase fw-bold mb-4 text-white'
               >
                 <MDBIcon icon='gem' className='me-3' />
                 Electrum
@@ -105,7 +105,7 @@ export default function Footer () {
             >
               <h6
                 style={{ backgroundColor: 'transparent' }}
-                className='text-uppercase fw-bold mb-4'
+                className='text-uppercase fw-bold mb-4 text-white text-white'
               >
                 Tech
               </h6>
@@ -156,7 +156,7 @@ export default function Footer () {
             >
               <h6
                 style={{ backgroundColor: 'transparent' }}
-                className='text-uppercase fw-bold mb-4'
+                className='text-uppercase fw-bold mb-4 text-white'
               >
                 Quick Menu
               </h6>
@@ -207,7 +207,7 @@ export default function Footer () {
             >
               <h6
                 style={{ backgroundColor: 'transparent' }}
-                className='text-uppercase fw-bold mb-4'
+                className='text-uppercase fw-bold mb-4 text-white'
               >
                 Contact
               </h6>
@@ -231,7 +231,7 @@ export default function Footer () {
       </section>
 
       <div
-        className='text-center p-4'
+        className='text-center p-4 text-white'
         style={{ backgroundColor: 'transparent' }}
       >
         © 2024 Copyright: Electrum

@@ -1,6 +1,7 @@
 [
     {
     "id": 1,
+    "competitionType": "previous",
     "title": "Annual Tech Gala",
     "winningTeamName": "Future Innovators",
     "institutionName": "National Institute of Technology",
@@ -16,6 +17,7 @@
   },
   {
     "id": 2,
+    "competitionType": "previous",
     "title": "Robotics Rumble",
     "winningTeamName": "Robo Rangers",
     "institutionName": "Stanford University",
@@ -23,13 +25,15 @@
     "location": "Silicon Valley Expo Center",
     "description": "Annual robotics competition with a focus on automation and artificial intelligence.",
     "moreInfoLink": "https://www.roboticsrumble.com",
-    "images": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZUOuI5PFOcyUviIBjbKoVeRx7Sm5HMsNzvGnXhivvYksLTtftXoS6-Ofqmy2l0X9HaJQ&usqp=CAU",
-    "https://engineering.usu.edu/images/news/stories/2023/2023-ieee-ifec-team-web-2.jpg",
+    "images": [
+      "https://engineering.usu.edu/images/news/stories/2023/2023-ieee-ifec-team-web-2.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZUOuI5PFOcyUviIBjbKoVeRx7Sm5HMsNzvGnXhivvYksLTtftXoS6-Ofqmy2l0X9HaJQ&usqp=CAU",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI04FGUlev7lXbEdHINfeQz7dmJBY64Y8WwYdjzxBYMx0aipa0vB5zK8NDL-9HQqodaI4&usqp=CAU"
     ]
   },
   {
     "id": 3,
+    "competitionType": "previous",
     "title": "AI Hackathon 2024",
     "winningTeamName": "Data Wizards",
     "institutionName": "California Institute of Technology",
@@ -38,12 +42,13 @@
     "description": "Intensive 48-hour event challenging teams to solve real-world problems using AI technologies.",
     "moreInfoLink": "https://www.aihackathon2024.com",
     "images": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZUOuI5PFOcyUviIBjbKoVeRx7Sm5HMsNzvGnXhivvYksLTtftXoS6-Ofqmy2l0X9HaJQ&usqp=CAU",
-    "https://engineering.usu.edu/images/news/stories/2023/2023-ieee-ifec-team-web-2.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI04FGUlev7lXbEdHINfeQz7dmJBY64Y8WwYdjzxBYMx0aipa0vB5zK8NDL-9HQqodaI4&usqp=CAU"
-    ]
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI04FGUlev7lXbEdHINfeQz7dmJBY64Y8WwYdjzxBYMx0aipa0vB5zK8NDL-9HQqodaI4&usqp=CAU",
+    "https://engineering.usu.edu/images/news/stories/2023/2023-ieee-ifec-team-web-2.jpg"
+  ]
   },
   {
     "id": 4,
+    "competitionType": "previous",
     "title": "Code Quest",
     "winningTeamName": "Algorithm Avengers",
     "institutionName": "Massachusetts Institute of Technology",
@@ -52,13 +57,15 @@
     "prize": "$8,000",
     "description": "An annual coding marathon where the best and brightest developers compete to solve complex algorithms and programming challenges.",
     "moreInfoLink": "https://www.aihackathon2024.com",
-    "images": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZUOuI5PFOcyUviIBjbKoVeRx7Sm5HMsNzvGnXhivvYksLTtftXoS6-Ofqmy2l0X9HaJQ&usqp=CAU",
-    "https://engineering.usu.edu/images/news/stories/2023/2023-ieee-ifec-team-web-2.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI04FGUlev7lXbEdHINfeQz7dmJBY64Y8WwYdjzxBYMx0aipa0vB5zK8NDL-9HQqodaI4&usqp=CAU"
+    "images": [
+      "https://engineering.usu.edu/images/news/stories/2023/2023-ieee-ifec-team-web-2.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI04FGUlev7lXbEdHINfeQz7dmJBY64Y8WwYdjzxBYMx0aipa0vB5zK8NDL-9HQqodaI4&usqp=CAU",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZUOuI5PFOcyUviIBjbKoVeRx7Sm5HMsNzvGnXhivvYksLTtftXoS6-Ofqmy2l0X9HaJQ&usqp=CAU"
     ]
   },
   {
     "id": 5,
+    "competitionType": "previous",
     "title": "Green Tech Symposium",
     "winningTeamName": "Eco Innovators",
     "institutionName": "University of California, Berkeley",
@@ -68,12 +75,13 @@
     "description": "Focuses on developing sustainable technologies to address environmental challenges, featuring leading experts and innovative startups.",
     "moreInfoLink": "https://www.aihackathon2024.com",
     "images": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZUOuI5PFOcyUviIBjbKoVeRx7Sm5HMsNzvGnXhivvYksLTtftXoS6-Ofqmy2l0X9HaJQ&usqp=CAU",
-    "https://engineering.usu.edu/images/news/stories/2023/2023-ieee-ifec-team-web-2.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI04FGUlev7lXbEdHINfeQz7dmJBY64Y8WwYdjzxBYMx0aipa0vB5zK8NDL-9HQqodaI4&usqp=CAU"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI04FGUlev7lXbEdHINfeQz7dmJBY64Y8WwYdjzxBYMx0aipa0vB5zK8NDL-9HQqodaI4&usqp=CAU",
+    "https://engineering.usu.edu/images/news/stories/2023/2023-ieee-ifec-team-web-2.jpg"
     ]
   },
   {
     "id": 6,
+    "competitionType": "upcoming",
     "title": "Cyber Defense Conference",
     "winningTeamName": "Security Sentinels",
     "institutionName": "Georgia Institute of Technology",
@@ -82,13 +90,14 @@
     "prize": "$9,500",
     "description": "A competitive event that pits cybersecurity experts against each other in a battle to protect digital infrastructures.",
     "moreInfoLink": "https://www.aihackathon2024.com",
-    "images": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZUOuI5PFOcyUviIBjbKoVeRx7Sm5HMsNzvGnXhivvYksLTtftXoS6-Ofqmy2l0X9HaJQ&usqp=CAU",
-    "https://engineering.usu.edu/images/news/stories/2023/2023-ieee-ifec-team-web-2.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI04FGUlev7lXbEdHINfeQz7dmJBY64Y8WwYdjzxBYMx0aipa0vB5zK8NDL-9HQqodaI4&usqp=CAU"
+    "images": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-ziY8rL_XpF9JbxdPZ9DuqFQMDcUayiiw0E-sWv-IhA&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRQwOYak6Td8sSpfv5G8zLW-SvdCM77-We_OhD8KK721Cb_T8EEY5Cqnk4SeFiAEMGFfc&usqp=CAU",
+    "https://surfincubator.com/wp-content/uploads/2023/06/Meet-and-Greet-Mixer-Happy-Hour-at-SURF-Incubator-in-Seattle-WA.jpg"
     ]
   },
   {
     "id": 7,
+    "competitionType": "upcoming",
     "title": "Innovation in Transportation",
     "winningTeamName": "Mobilitech Pioneers",
     "institutionName": "University of Michigan",
@@ -97,11 +106,60 @@
     "prize": "$6,500",
     "description": "Engineering students compete to create innovative transportation solutions that are efficient, sustainable, and revolutionary.",
     "moreInfoLink": "https://www.aihackathon2024.com",
-    "images": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZUOuI5PFOcyUviIBjbKoVeRx7Sm5HMsNzvGnXhivvYksLTtftXoS6-Ofqmy2l0X9HaJQ&usqp=CAU",
-    "https://engineering.usu.edu/images/news/stories/2023/2023-ieee-ifec-team-web-2.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI04FGUlev7lXbEdHINfeQz7dmJBY64Y8WwYdjzxBYMx0aipa0vB5zK8NDL-9HQqodaI4&usqp=CAU"
+    "images": [
+      "https://surfincubator.com/wp-content/uploads/2023/06/Meet-and-Greet-Mixer-Happy-Hour-at-SURF-Incubator-in-Seattle-WA.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-ziY8rL_XpF9JbxdPZ9DuqFQMDcUayiiw0E-sWv-IhA&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRQwOYak6Td8sSpfv5G8zLW-SvdCM77-We_OhD8KK721Cb_T8EEY5Cqnk4SeFiAEMGFfc&usqp=CAU"
     ]
-  }        
+  },
+  {
+    "id": 8,
+    "competitionType": "upcoming",
+    "title": "Green Tech Symposium",
+    "winningTeamName": "Eco Innovators",
+    "institutionName": "University of California, Berkeley",
+    "eventDate": "2024-08-22",
+    "location": "Berkeley, CA",
+    "prize": "$12,000",
+    "description": "Focuses on developing sustainable technologies to address environmental challenges, featuring leading experts and innovative startups.",
+    "moreInfoLink": "https://www.aihackathon2024.com",
+    "images": [
+      "https://surfincubator.com/wp-content/uploads/2023/06/Meet-and-Greet-Mixer-Happy-Hour-at-SURF-Incubator-in-Seattle-WA.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRQwOYak6Td8sSpfv5G8zLW-SvdCM77-We_OhD8KK721Cb_T8EEY5Cqnk4SeFiAEMGFfc&usqp=CAU",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-ziY8rL_XpF9JbxdPZ9DuqFQMDcUayiiw0E-sWv-IhA&s"
+    ]
+  },  
+  {
+    "id": 9,
+    "competitionType": "upcoming",
+    "title": "Robotics Rumble",
+    "winningTeamName": "Robo Rangers",
+    "institutionName": "Stanford University",
+    "eventDate": "March 22, 2024",
+    "location": "Silicon Valley Expo Center",
+    "description": "Annual robotics competition with a focus on automation and artificial intelligence.",
+    "moreInfoLink": "https://www.roboticsrumble.com",
+    "images": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-ziY8rL_XpF9JbxdPZ9DuqFQMDcUayiiw0E-sWv-IhA&s",
+    "https://surfincubator.com/wp-content/uploads/2023/06/Meet-and-Greet-Mixer-Happy-Hour-at-SURF-Incubator-in-Seattle-WA.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRQwOYak6Td8sSpfv5G8zLW-SvdCM77-We_OhD8KK721Cb_T8EEY5Cqnk4SeFiAEMGFfc&usqp=CAU"
+    ]
+  },  
+  {
+    "id": 10,
+    "competitionType": "upcoming",
+    "title": "Annual Tech Gala",
+    "winningTeamName": "Future Innovators",
+    "institutionName": "National Institute of Technology",
+    "eventDate": "September 15, 2024",
+    "location": "Tech Convention Center, New York",
+    "description": "A showcase of cutting-edge technology and innovation by students from top engineering schools.",
+    "moreInfoLink": "https://www.annualtechgala.com",
+    "images": [
+      "https://surfincubator.com/wp-content/uploads/2023/06/Meet-and-Greet-Mixer-Happy-Hour-at-SURF-Incubator-in-Seattle-WA.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-ziY8rL_XpF9JbxdPZ9DuqFQMDcUayiiw0E-sWv-IhA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRQwOYak6Td8sSpfv5G8zLW-SvdCM77-We_OhD8KK721Cb_T8EEY5Cqnk4SeFiAEMGFfc&usqp=CAU"
+    ]
+  }    
 
 ]
   
