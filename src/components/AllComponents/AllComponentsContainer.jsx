@@ -2,137 +2,79 @@ import PropTypes from 'prop-types'
 
 import SingleCard from './SingleCard'
 import './Styles.css'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { Spinner } from 'react-bootstrap'
 
-const componentsData = [
-  {
-    id: 1,
-    productImgURL: 'https://i.ibb.co/bF925Wj/arduino.webp',
-    productName: 'Arduino Micro Controller',
-    description: 'A popular single-board micro controller for beginners.',
-    price: '$21',
-    type: 'new'
-  },
-  {
-    id: 2,
-    productImgURL: 'https://i.ibb.co/QX9NsH7/i2c.png',
-    productName: 'I2C Display',
-    description:
-      'A Liquid Crystal Display (LCD) using I2C communication for easy connection with just a few wires.',
-    price: '$9.5',
-    type: 'new'
-  },
-  {
-    id: 3,
-    productImgURL: 'https://i.ibb.co/mBNC9Df/esp32.png',
-    productName: 'ESP32 Micro Controller',
-    description:
-      'A powerful micro controller with Wi-Fi and Bluetooth connectivity.',
-    price: '$13.5',
-    type: 'new'
-  },
-  {
-    id: 4,
-    productImgURL: 'https://i.ibb.co/bF925Wj/arduino.webp',
-    productName: 'Arduino Micro Controller',
-    description: 'A popular single-board micro controller for beginners.',
-    price: '$21',
-    type: 'new'
-  },
-  {
-    id: 5,
-    productImgURL: 'https://i.ibb.co/QX9NsH7/i2c.png',
-    productName: 'I2C Display',
-    description:
-      'A Liquid Crystal Display (LCD) using I2C communication for easy connection with just a few wires.',
-    price: '$9.5',
-    type: 'new'
-  },
-  {
-    id: 6,
-    productImgURL: 'https://i.ibb.co/mBNC9Df/esp32.png',
-    productName: 'ESP32 Micro Controller',
-    description:
-      'A powerful micro controller with Wi-Fi and Bluetooth connectivity.',
-    price: '$13.5',
-    type: 'new'
-  },
-  {
-    id: 7,
-    productImgURL: 'https://i.ibb.co/bF925Wj/arduino.webp',
-    productName: 'Arduino Micro Controller',
-    description: 'A popular single-board micro controller for beginners.',
-    price: '$21',
-    type: 'old'
-  },
-  {
-    id: 8,
-    productImgURL: 'https://i.ibb.co/QX9NsH7/i2c.png',
-    productName: 'I2C Display',
-    description:
-      'A Liquid Crystal Display (LCD) using I2C communication for easy connection with just a few wires.',
-    price: '$9.5',
-    type: 'old'
-  },
-  {
-    id: 10,
-    productImgURL: 'https://i.ibb.co/mBNC9Df/esp32.png',
-    productName: 'ESP32 Micro Controller',
-    description:
-      'A powerful micro controller with Wi-Fi and Bluetooth connectivity.',
-    price: '$13.5',
-    type: 'old'
-  },
-  {
-    id: 11,
-    productImgURL: 'https://i.ibb.co/bF925Wj/arduino.webp',
-    productName: 'Arduino Micro Controller',
-    description: 'A popular single-board micro controller for beginners.',
-    price: '$21',
-    type: 'old'
-  },
-  {
-    id: 12,
-    productImgURL: 'https://i.ibb.co/QX9NsH7/i2c.png',
-    productName: 'I2C Display',
-    description:
-      'A Liquid Crystal Display (LCD) using I2C communication for easy connection with just a few wires.',
-    price: '$9.5',
-    type: 'old'
-  }
-]
 
 const AllComponentsContainer = ({ activeNew, activeOld, searchTerm }) => {
-  const filteredNewComponents = componentsData
+  const [components, setComponents] = useState([]) 
+  const [loading, setLoading] = useState(true) 
+  const [error, setError] = useState(null) 
+
+  // Fetch all components when the component mounts
+  useEffect(() => {
+    const fetchComponents = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_SERVER}/components`
+        ) 
+        setComponents(response.data) 
+      } catch (err) {
+        setError(err.message || 'Error fetching components') 
+      } finally {
+        setLoading(false) 
+      }
+    }
+
+    fetchComponents() 
+  }, []) 
+
+  if (loading) {
+    return <Spinner animation='grow' /> 
+  }
+
+  if (error) {
+    return <div>Error: {error}</div> 
+  }
+
+  if (components.length === 0) {
+    return <div>No components found</div> 
+  }
+
+  console.log(components)
+
+  const filteredNewComponents = components
     .filter(component => component.type === 'new')
     .filter(
       component =>
-        component.productName
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase()) ||
-        component.description.toLowerCase().includes(searchTerm.toLowerCase())
+        component.name
+          ?.toLowerCase()
+          .includes(searchTerm?.toLowerCase()) ||
+        component.description?.toLowerCase().includes(searchTerm?.toLowerCase())
     )
-    
-  const filteredOldComponents = componentsData
+
+  const filteredOldComponents = components
     .filter(component => component.type === 'old')
     .filter(
       component =>
-        component.productName
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase()) ||
-        component.description.toLowerCase().includes(searchTerm.toLowerCase())
+        component.name
+          ?.toLowerCase()
+          .includes(searchTerm?.toLowerCase()) ||
+        component.description?.toLowerCase().includes(searchTerm?.toLowerCase())
     )
 
   return (
     <>
       <div className='comp_card_container'>
         {activeNew &&
-          filteredNewComponents.map((component, index) => (
-            <SingleCard key={index} component={component} />
+          filteredNewComponents.map(component => (
+            <SingleCard key={component._id} component={component} />
           ))}
 
         {activeOld &&
-          filteredOldComponents.map((component, index) => (
-            <SingleCard key={index} component={component} />
+          filteredOldComponents.map(component => (
+            <SingleCard key={component._id} component={component} />
           ))}
 
         {activeNew && filteredNewComponents.length == 0 && (

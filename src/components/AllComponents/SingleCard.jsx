@@ -4,24 +4,24 @@ import { useNavigate } from 'react-router-dom'
 
 const AllComponentCard = ({ component }) => {
   const navigate = useNavigate()
-  const { productImgURL, productName, description, price, id } = component
+  const { img_URL, name, description, selling_price, _id } = component
 
   const handleComponentClick = () => {
-    navigate(`/components/${id}`)
+    navigate(`/components/${_id}`)
   }
 
   return (
     <div className='comp_single_card' onClick={handleComponentClick}>
       <div className='product_img_container'>
-        <img className='product_img' src={productImgURL} alt='' />
+        <img className='product_img' src={img_URL} alt='' />
       </div>
       <div className='name_desc_container'>
-        <h4 className='product_name'>{productName}</h4>
+        <h4 className='product_name'>{name}</h4>
         <p className='product_desc'>{description}</p>
       </div>
       <div className='card_footer'>
         <img className='cart_icon' src={cartIcon} alt='' />
-        <p className='product_price'>{price}</p>
+        <p className='product_price'>$ {selling_price}</p>
       </div>
     </div>
   )
@@ -29,11 +29,11 @@ const AllComponentCard = ({ component }) => {
 
 AllComponentCard.propTypes = {
   component: PropTypes.shape({
-    productImgURL: PropTypes.string,
-    productName: PropTypes.string,
+    img_URL: PropTypes.string,
+    name: PropTypes.string,
     description: PropTypes.string,
-    price: PropTypes.string,
-    id: PropTypes.string,
+    selling_price: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired
 }
 
