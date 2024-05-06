@@ -11,6 +11,7 @@ const SideMenu = () => {
       <a href='/dashboard/profile'>profile</a> <br />
       <a href='/dashboard/order'>order</a> <br />
       <a href='/dashboard/add-component'>add component</a> <br />
+      <a href='/dashboard/my-components'>my component</a> <br />
     </div>
   )
 }
