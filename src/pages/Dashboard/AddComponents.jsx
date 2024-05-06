@@ -2,8 +2,12 @@ import { useState } from 'react'
 import './Style.css'
 import axios from 'axios'
 import { useAuth } from '../../components/Auth/contexts/authContext'
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
 
 const AddComponents = () => {
+  const navigate = useNavigate()
+
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [sellingPrice, setSellingPrice] = useState('')
@@ -48,16 +52,26 @@ const AddComponents = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      await axios.post(`${import.meta.env.VITE_SERVER}/post-component`, {
-        name,
-        description,
-        img_URL,
-        selling_price: Number(sellingPrice),
-        buying_price: Number(buyingPrice),
-        quantity: Number(quantity),
-        type: 'old',
-        owner_id: String(loggedInUserInfo._id)
-      })
+      await axios
+        .post(`${import.meta.env.VITE_SERVER}/post-component`, {
+          name,
+          description,
+          img_URL,
+          selling_price: Number(sellingPrice),
+          buying_price: Number(buyingPrice),
+          quantity: Number(quantity),
+          type: 'old',
+          owner_id: String(loggedInUserInfo._id)
+        })
+        .then(
+          Swal.fire({
+            title: 'Good job!',
+            text: 'Component added successfully!',
+            icon: 'success'
+          }).then(() => {
+            navigate('/dashboard/my-components')
+          })
+        )
     } catch (error) {
       console.log(error)
     }
