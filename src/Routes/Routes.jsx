@@ -22,6 +22,7 @@ import YourOrder from '../pages/Dashboard/YourOrder'
 import PrivateRoutes from '../Layout/PrivateRoutes'
 import AddComponents from '../pages/Dashboard/AddComponents'
 import MyComponents from '../pages/Dashboard/MyComponents'
+import Shipment from '../pages/AllComponents/Shipment'
 
 // Define routes inside the main layout
 const mainRoutes = [
@@ -84,6 +85,14 @@ const mainRoutes = [
   {
     path: 'sign-up',
     element: <SignUp />
+  },
+  {
+    path: 'shipment',
+    element: (
+      <PrivateRoutes>
+        <Shipment />
+      </PrivateRoutes>
+    )
   }
 ]
 

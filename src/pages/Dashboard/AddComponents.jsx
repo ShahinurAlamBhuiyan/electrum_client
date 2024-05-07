@@ -50,6 +50,11 @@ const AddComponents = () => {
   ]
 
   const handleSubmit = async e => {
+    let productType = 'old'
+    if (loggedInUserInfo.role === 'admin') {
+      productType = 'new'
+    }
+
     e.preventDefault()
     try {
       await axios
@@ -60,7 +65,7 @@ const AddComponents = () => {
           selling_price: Number(sellingPrice),
           buying_price: Number(buyingPrice),
           quantity: Number(quantity),
-          type: 'old',
+          type: productType,
           owner_id: String(loggedInUserInfo._id)
         })
         .then(

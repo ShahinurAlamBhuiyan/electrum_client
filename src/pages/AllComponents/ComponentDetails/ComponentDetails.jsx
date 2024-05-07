@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
 import axios from 'axios'
 import './ComponentDetails.css'
@@ -11,6 +11,8 @@ const ComponentDetails = () => {
   const [error, setError] = useState(null)
   const [count, setCount] = useState(1)
   const [owner, setOwner] = useState(null)
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchComponent = async () => {
@@ -68,6 +70,9 @@ const ComponentDetails = () => {
 
   const incrementCount = () => {
     setCount(count + 1)
+  }
+  const handleBuyNow = () => {
+    navigate('/shipment')
   }
 
   return (
@@ -129,7 +134,7 @@ const ComponentDetails = () => {
               </span>
               <button onClick={incrementCount}>+</button>
             </div>
-            <button className='btn-buy-now color-black'>Buy Now</button>
+            <button className='btn-buy-now color-black' onClick={handleBuyNow}>Buy Now</button>
           </div>
         </div>
       </div>
