@@ -18,3 +18,6 @@ To empower enthusiasts, hobbyists, and DIY electronics enthusiasts by providing 
 
 ## Work Flow 
 https://docs.google.com/document/d/1DhCCWL9_KvWSmqjiDg3ScnNsdxgaJ8iovthxRsK2d-A/edit?usp=sharing 
+
+## SRS
+https://docs.google.com/presentation/d/1BZwJFheX989rb0OJmBgAOSJ-47i9bj2WtYDppBjspH8/edit?usp=sharing 
